@@ -44,7 +44,7 @@
       "roof_shape": "フラット",
       "support_type": "片側支持",
       "snow_resist_cm": 50,
-      "wind_resist_mps": null,
+      "wind_resist_mps": 46,
       "heat_shield": false,
       "lighting": false,
       "color": "木調色（ラッピング形材色）",

@@ -58,7 +58,7 @@ function renderTable() {
       <th class="compare-th-product">
         <div class="compare-prod-head">
           <div class="compare-prod-thumb">
-            <img src="${p.image}" alt="${p.name}"
+            <img src="${imageSrc(p, '')}" alt="${p.name}"
                  onerror="this.style.display='none';">
           </div>
           <div class="compare-prod-name">${p.name}</div>
