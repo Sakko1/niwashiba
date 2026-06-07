@@ -25,9 +25,18 @@ const API = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601';
 const IMG_SIZE = '400x400';
 
 function loadConfig() {
+  // ① 環境変数を優先（GitHub Actions などの自動実行用）
+  if (process.env.RAKUTEN_APP_ID) {
+    return {
+      applicationId: process.env.RAKUTEN_APP_ID,
+      affiliateId: process.env.RAKUTEN_AFFILIATE_ID || '',
+    };
+  }
+  // ② ローカル設定ファイル
   if (!fs.existsSync(CONFIG_PATH)) {
-    console.error('✗ 設定ファイルがありません: tools/rakuten-config.json');
-    console.error('  tools/rakuten-config.example.json をコピーして作成し、IDを記入してください。');
+    console.error('✗ 認証情報がありません。');
+    console.error('  ローカル: tools/rakuten-config.json を作成（example をコピー）');
+    console.error('  または環境変数 RAKUTEN_APP_ID / RAKUTEN_AFFILIATE_ID を設定してください。');
     process.exit(1);
   }
   const c = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
