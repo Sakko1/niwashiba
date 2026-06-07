@@ -22,6 +22,7 @@
 | `snow_resist_cm` | 耐積雪 cm | 数値 | `20` | ○ |
 | `wind_resist_mps` | 耐風圧 m/s | 数値 | `38` | ○ |
 | `heat_shield` | 熱線遮断機能の有無 | 真偽値 | `true` / `false` | ○ |
+| `lighting` | 天井照明の有無 | 真偽値 | `true` / `false` | ○ |
 | `color` | カラー | 文字列 | `"シャイングレー"` | ○ |
 | `warranty_years` | メーカー保証年数 | 数値 | `2` | ○ |
 | `image` | SVGフォールバック画像のパス | 文字列 | `"images/carport/xxx.svg"` | ○ |
@@ -30,8 +31,19 @@
 | `image_credit` | 画像のクレジット表記（出典） | 文字列 | `"画像提供：楽天市場「○○エクステリア」"` | △ |
 | `affiliate_provider` | アフィリ提供元 | 文字列 | `"楽天市場"` / `"Amazon"` | △ |
 | `affiliate_url` | アフィリエイトリンク | 文字列 | `"https://hb.afl.rakuten.co.jp/..."` | △ |
+| `rakuten_item_code` | **楽天の商品コード**（自動取得の元） | 文字列 | `"jyupro:car-csc-kj"` | △ |
 
 > △ … アフィリエイト提携で正規画像を載せる場合に使用。空のままなら自動生成のSVGイラストが表示されます。
+
+### ⭐ 自動取得（おすすめ）
+
+`rakuten_item_code` を入れておけば、**価格・画像・アフィリリンクは手入力不要**です。
+`node tools/refresh-rakuten.js` を実行すると、楽天APIから自動取得して `price` / `image_real` /
+`affiliate_url` / `image_credit` を埋めてくれます（価格改定時も再実行するだけ）。
+詳しくは [`docs/商品の管理方法.md`](../docs/商品の管理方法.md) を参照。
+
+**商品コードの調べ方**：楽天の商品ページURL `item.rakuten.co.jp/<店舗>/<商品>/` の
+`<店舗>` と `<商品>` を `:` でつなぐ。例 → `jyupro:car-csc-kj`
 
 ## 不明な値の扱い
 

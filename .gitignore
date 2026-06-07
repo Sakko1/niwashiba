@@ -12,3 +12,6 @@ npm-debug.log*
 
 # ローカルのプレビュー設定（公開不要）
 .claude/
+
+# 楽天APIの秘密情報（絶対に公開しない）
+tools/rakuten-config.json

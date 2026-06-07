@@ -21,6 +21,7 @@ const CARPORT_FIELDS = [
   { key: 'snow_resist_cm', label: '耐積雪',        format: v => v + ' cm' },
   { key: 'wind_resist_mps',label: '耐風圧',        format: v => v + ' m/s' },
   { key: 'heat_shield',    label: '熱線遮断',      format: v => (v ? 'あり' : 'なし') },
+  { key: 'lighting',       label: '天井照明',      format: v => (v ? 'あり' : 'なし') },
   { key: 'color',          label: 'カラー' },
   { key: 'warranty_years', label: 'メーカー保証',  format: v => v + ' 年' },
 ];

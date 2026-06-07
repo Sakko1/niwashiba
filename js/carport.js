@@ -78,8 +78,8 @@ function applyFilters() {
           return num >= min && num <= max;
         });
         if (!inRange) return false;
-      } else if (key === 'heat_shield') {
-        if (!values.includes(String(p.heat_shield))) return false;
+      } else if (key === 'heat_shield' || key === 'lighting') {
+        if (!values.includes(String(p[key]))) return false;
       } else {
         if (!values.includes(String(p[key]))) return false;
       }

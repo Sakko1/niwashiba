@@ -7,7 +7,7 @@
       "id": "lixil-carport-sc-1",
       "name": "カーポートSC 1台用",
       "maker": "LIXIL",
-      "price": null,
+      "price": 395000,
       "size_type": "1台用",
       "width_mm": 2700,
       "depth_mm": 5754,
@@ -26,7 +26,9 @@
       "image_real": "https://hbb.afl.rakuten.co.jp/hgb/54a929f3.becd46de.54a929f4.e7b12c3e/?me_id=1232965&item_id=10130290&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fjyupro%2Fcabinet%2Fcarport%2Fcar-csc-kj.jpg%3F_ex%3D240x240&s=240x240&t=pict",
       "image_credit": "画像・リンク提供：楽天市場",
       "affiliate_provider": "楽天市場",
-      "affiliate_url": "https://hb.afl.rakuten.co.jp/ichiba/54a929f3.becd46de.54a929f4.e7b12c3e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjyupro%2Fcar-csc-kj%2F&link_type=pict&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
+      "affiliate_url": "https://hb.afl.rakuten.co.jp/ichiba/54a929f3.becd46de.54a929f4.e7b12c3e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjyupro%2Fcar-csc-kj%2F&link_type=pict&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+      "lighting": false,
+      "rakuten_item_code": "jyupro:car-csc-kj"
     },
     {
       "id": "lixil-carport-st-1",
@@ -51,7 +53,9 @@
       "image_real": "",
       "image_credit": "",
       "affiliate_provider": "",
-      "affiliate_url": ""
+      "affiliate_url": "",
+      "lighting": false,
+      "rakuten_item_code": ""
     },
     {
       "id": "lixil-carport-st-2",
@@ -76,7 +80,9 @@
       "image_real": "",
       "image_credit": "",
       "affiliate_provider": "",
-      "affiliate_url": ""
+      "affiliate_url": "",
+      "lighting": false,
+      "rakuten_item_code": ""
     },
     {
       "id": "ykkap-rezas-1",
@@ -101,7 +107,9 @@
       "image_real": "",
       "image_credit": "",
       "affiliate_provider": "",
-      "affiliate_url": ""
+      "affiliate_url": "",
+      "lighting": false,
+      "rakuten_item_code": ""
     },
     {
       "id": "sankyo-mshade-2",
@@ -126,7 +134,9 @@
       "image_real": "",
       "image_credit": "",
       "affiliate_provider": "",
-      "affiliate_url": ""
+      "affiliate_url": "",
+      "lighting": false,
+      "rakuten_item_code": ""
     },
     {
       "id": "lixil-footly-snow",
@@ -151,7 +161,9 @@
       "image_real": "",
       "image_credit": "",
       "affiliate_provider": "",
-      "affiliate_url": ""
+      "affiliate_url": "",
+      "lighting": false,
+      "rakuten_item_code": ""
     },
     {
       "id": "sankyo-wide-3",
@@ -176,7 +188,9 @@
       "image_real": "",
       "image_credit": "",
       "affiliate_provider": "",
-      "affiliate_url": ""
+      "affiliate_url": "",
+      "lighting": false,
+      "rakuten_item_code": ""
     },
     {
       "id": "generic-economy-1",
@@ -201,7 +215,9 @@
       "image_real": "",
       "image_credit": "",
       "affiliate_provider": "",
-      "affiliate_url": ""
+      "affiliate_url": "",
+      "lighting": false,
+      "rakuten_item_code": ""
     },
     {
       "id": "ykkap-fortify-2",
@@ -226,7 +242,9 @@
       "image_real": "",
       "image_credit": "",
       "affiliate_provider": "",
-      "affiliate_url": ""
+      "affiliate_url": "",
+      "lighting": false,
+      "rakuten_item_code": ""
     }
   ]
 }
