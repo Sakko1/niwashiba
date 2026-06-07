@@ -23,6 +23,7 @@ const COLOR_MAP = {
   'ステンカラー':         '#B2B7BC',
   'シルバー':             '#C6CACE',
   'カームブラック':       '#33363A',
+  'オフブラック':         '#2A2C2E',
 };
 
 function colorOf(name) {
