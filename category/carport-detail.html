@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>商品詳細 | NiwaShiba</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="header-inner container">
+      <a href="../index.html" class="logo">
+        <div class="logo-characters">
+          <span class="char-chicken" title="ニワトリ">🐔</span>
+          <span class="char-dog" title="芝犬">🐕</span>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">NiwaShiba</span>
+          <span class="logo-tagline">建築資材・商品比較サイト</span>
+        </div>
+      </a>
+      <nav class="nav-desktop">
+        <ul>
+          <li><a href="../index.html">ホーム</a></li>
+          <li><a href="../index.html#categories">カテゴリー</a></li>
+          <li><a href="carport.html">カーポート</a></li>
+          <li><a href="../compare.html">比較する</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburgerBtn" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="mobileNav">
+      <ul>
+        <li><a href="../index.html">ホーム</a></li>
+        <li><a href="../index.html#categories">カテゴリー</a></li>
+        <li><a href="carport.html">カーポート</a></li>
+        <li><a href="../compare.html">比較する</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- パンくず -->
+  <div class="breadcrumb container">
+    <a href="../index.html">ホーム</a>
+    <span>›</span>
+    <a href="carport.html">カーポート</a>
+    <span>›</span>
+    <span id="crumbName">商品詳細</span>
+  </div>
+
+  <!-- アフィリエイト表記（ステマ規制対応） -->
+  <div class="container">
+    <p class="affiliate-notice">
+      <span class="affiliate-notice-tag">PR</span>
+      本ページには広告（アフィリエイトリンク）が含まれます。商品リンクから購入された場合、運営者が報酬を得ることがあります。掲載画像は各提携サービスから提供された正規素材を使用しています。
+    </p>
+  </div>
+
+  <!-- 詳細本体（JSで描画） -->
+  <main class="detail container" id="detailMain">
+    <p class="detail-loading">読み込み中…</p>
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <span class="char-chicken">🐔</span>
+        <span class="char-dog">🐕</span>
+        <span class="logo-name">NiwaShiba</span>
+      </div>
+      <p class="footer-copy">&copy; 2026 NiwaShiba. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/fields.js"></script>
+  <script src="../js/carport-detail.js"></script>
+</body>
+</html>

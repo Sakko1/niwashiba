@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# エディタ
+.vscode/
+.idea/
+
+# 依存・ログ
+node_modules/
+npm-debug.log*
+
+# ローカルのプレビュー設定（公開不要）
+.claude/

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#F3FAE8"/>
+  <!-- 地面 -->
+  <rect x="0" y="250" width="400" height="50" fill="#E2EFD0"/>
+  <line x1="0" y1="250" x2="400" y2="250" stroke="#CADDB3" stroke-width="2"/>
+  <rect x="34" y="96" width="12" height="154" rx="3" fill="#B2B7BC"/><rect x="354" y="96" width="12" height="154" rx="3" fill="#B2B7BC"/>
+  <rect x="30" y="70" width="340" height="26" rx="5" fill="#B2B7BC"/>
+  <rect x="36" y="96" width="328" height="6" rx="3" fill="#B2B7BC" opacity="0.35"/>
+  
+    <g transform="translate(80,150)">
+      <rect x="6" y="14" width="68" height="20" rx="8" fill="#D7E5C4"/>
+      <path d="M16 14 Q24 2 40 2 Q56 2 64 14 Z" fill="#E4EED6"/>
+      <circle cx="22" cy="36" r="7" fill="#9DB87A"/>
+      <circle cx="58" cy="36" r="7" fill="#9DB87A"/>
+    </g>
+    <g transform="translate(160,150)">
+      <rect x="6" y="14" width="68" height="20" rx="8" fill="#D7E5C4"/>
+      <path d="M16 14 Q24 2 40 2 Q56 2 64 14 Z" fill="#E4EED6"/>
+      <circle cx="22" cy="36" r="7" fill="#9DB87A"/>
+      <circle cx="58" cy="36" r="7" fill="#9DB87A"/>
+    </g>
+    <g transform="translate(240,150)">
+      <rect x="6" y="14" width="68" height="20" rx="8" fill="#D7E5C4"/>
+      <path d="M16 14 Q24 2 40 2 Q56 2 64 14 Z" fill="#E4EED6"/>
+      <circle cx="22" cy="36" r="7" fill="#9DB87A"/>
+      <circle cx="58" cy="36" r="7" fill="#9DB87A"/>
+    </g>
+  <!-- メーカー＆台数ラベル -->
+  <text x="20" y="34" font-family="sans-serif" font-size="18" font-weight="700" fill="#5A9E30">三協アルミ</text>
+  <text x="380" y="34" text-anchor="end" font-family="sans-serif" font-size="14" fill="#7DC44C">3台用以上</text>
+</svg>

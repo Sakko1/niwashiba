@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>カーポート 一覧・比較 | NiwaShiba</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="header-inner container">
+      <a href="../index.html" class="logo">
+        <div class="logo-characters">
+          <span class="char-chicken" title="ニワトリ">🐔</span>
+          <span class="char-dog" title="芝犬">🐕</span>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">NiwaShiba</span>
+          <span class="logo-tagline">建築資材・商品比較サイト</span>
+        </div>
+      </a>
+      <nav class="nav-desktop">
+        <ul>
+          <li><a href="../index.html">ホーム</a></li>
+          <li><a href="../index.html#categories">カテゴリー</a></li>
+          <li><a href="carport.html" class="active">カーポート</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburgerBtn" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="mobileNav">
+      <ul>
+        <li><a href="../index.html">ホーム</a></li>
+        <li><a href="../index.html#categories">カテゴリー</a></li>
+        <li><a href="carport.html">カーポート</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- パンくず -->
+  <div class="breadcrumb container">
+    <a href="../index.html">ホーム</a>
+    <span>›</span>
+    <span>カーポート</span>
+  </div>
+
+  <!-- ページ見出し -->
+  <div class="page-head container">
+    <div class="page-head-text">
+      <h1>🚗 カーポート 一覧・比較</h1>
+      <p>メーカー・価格・サイズ・耐久性などで絞り込み、気になる商品を比較できます。</p>
+    </div>
+    <div class="page-head-mascot">
+      <span class="char-chicken">🐔</span>
+      <span class="char-dog">🐕</span>
+    </div>
+  </div>
+
+  <!-- アフィリエイト表記（ステマ規制対応） -->
+  <div class="container">
+    <p class="affiliate-notice">
+      <span class="affiliate-notice-tag">PR</span>
+      本ページには広告（アフィリエイトリンク）が含まれます。商品リンクから購入された場合、運営者が報酬を得ることがあります。掲載画像は各提携サービスから提供された正規素材を使用しています。
+    </p>
+  </div>
+
+  <!-- メイン -->
+  <div class="catalog container">
+
+    <!-- 絞り込みサイドバー -->
+    <aside class="filters" id="filters">
+      <div class="filters-head">
+        <h2>絞り込み</h2>
+        <button type="button" class="filters-reset" id="filterReset">リセット</button>
+      </div>
+
+      <!-- メーカー -->
+      <div class="filter-group">
+        <h3>メーカー</h3>
+        <div class="filter-options" data-filter="maker"></div>
+      </div>
+
+      <!-- 台数 -->
+      <div class="filter-group">
+        <h3>サイズ・台数</h3>
+        <div class="filter-options" data-filter="size_type"></div>
+      </div>
+
+      <!-- 価格帯 -->
+      <div class="filter-group">
+        <h3>価格帯</h3>
+        <div class="filter-options" data-filter="price">
+          <label><input type="checkbox" value="0-200000">〜20万円</label>
+          <label><input type="checkbox" value="200000-400000">20〜40万円</label>
+          <label><input type="checkbox" value="400000-600000">40〜60万円</label>
+          <label><input type="checkbox" value="600000-99999999">60万円〜</label>
+        </div>
+      </div>
+
+      <!-- 屋根材 -->
+      <div class="filter-group">
+        <h3>屋根材</h3>
+        <div class="filter-options" data-filter="roof_material"></div>
+      </div>
+
+      <!-- 屋根形状 -->
+      <div class="filter-group">
+        <h3>屋根形状</h3>
+        <div class="filter-options" data-filter="roof_shape"></div>
+      </div>
+
+      <!-- 耐積雪 -->
+      <div class="filter-group">
+        <h3>耐積雪</h3>
+        <div class="filter-options" data-filter="snow_resist_cm">
+          <label><input type="checkbox" value="0-20">〜20cm</label>
+          <label><input type="checkbox" value="21-50">21〜50cm</label>
+          <label><input type="checkbox" value="51-100">51〜100cm</label>
+          <label><input type="checkbox" value="101-9999">100cm超（豪雪地）</label>
+        </div>
+      </div>
+
+      <!-- 熱線遮断 -->
+      <div class="filter-group">
+        <h3>機能</h3>
+        <div class="filter-options" data-filter="heat_shield">
+          <label><input type="checkbox" value="true">熱線遮断あり</label>
+        </div>
+      </div>
+    </aside>
+
+    <!-- 商品一覧 -->
+    <main class="products">
+      <div class="products-toolbar">
+        <span class="products-count" id="productsCount">読み込み中…</span>
+        <label class="sort-control">
+          並び替え：
+          <select id="sortSelect">
+            <option value="default">おすすめ順</option>
+            <option value="price-asc">価格が安い順</option>
+            <option value="price-desc">価格が高い順</option>
+            <option value="snow-desc">耐積雪が高い順</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+      <p class="products-empty" id="productsEmpty" hidden>条件に合う商品が見つかりませんでした。</p>
+    </main>
+  </div>
+
+  <!-- 比較バー（固定） -->
+  <div class="compare-bar" id="compareBar" hidden>
+    <div class="compare-bar-inner container">
+      <span class="compare-bar-count"><strong id="compareCount">0</strong> 件を選択中</span>
+      <div class="compare-bar-actions">
+        <button type="button" class="compare-bar-clear" id="compareClear">クリア</button>
+        <a href="../compare.html" class="btn btn-primary compare-bar-go">比較表を見る</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <span class="char-chicken">🐔</span>
+        <span class="char-dog">🐕</span>
+        <span class="logo-name">NiwaShiba</span>
+      </div>
+      <p class="footer-copy">&copy; 2026 NiwaShiba. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/fields.js"></script>
+  <script src="../js/carport.js"></script>
+</body>
+</html>
