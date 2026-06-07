@@ -129,4 +129,8 @@ function main() {
   console.log('updated', JSON_PATH);
 }
 
-main();
+// 他スクリプトから buildSvg を再利用できるよう公開
+module.exports = { buildSvg, IMG_DIR };
+
+// 直接実行されたときだけ全SVGを再生成
+if (require.main === module) main();

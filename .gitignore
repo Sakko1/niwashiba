@@ -15,3 +15,6 @@ npm-debug.log*
 
 # 楽天APIの秘密情報（絶対に公開しない）
 tools/rakuten-config.json
+
+# スプレッドシートの参照元URL（ローカル設定）
+tools/sheet-source.txt
