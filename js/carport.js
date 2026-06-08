@@ -62,6 +62,15 @@ function getActiveFilters() {
   return filters;
 }
 
+/* --- 商品のフィルタ判定用の候補値（バリエーションは各サイズの値、通常は単一） --- */
+function valuesOf(p, key) {
+  if (Array.isArray(p.variants) && p.variants.length && p.variants.some(v => key in v)) {
+    const vals = p.variants.map(v => v[key]).filter(x => !isUnknown(x));
+    return vals.length ? vals : [p[key]];
+  }
+  return [p[key]];
+}
+
 /* --- フィルタ適用 → 並び替え → 描画 --- */
 function applyFilters() {
   const filters = getActiveFilters();
@@ -69,19 +78,21 @@ function applyFilters() {
   let result = allProducts.filter(p => {
     for (const key in filters) {
       const values = filters[key];
+      // バリエーション商品はサイズごとの値を候補にする（一部でも合致すれば表示）
+      const candidates = valuesOf(p, key);
       if (key === 'price' || key === 'snow_resist_cm') {
-        // 範囲フィルタ
-        const num = p[key];
-        if (isUnknown(num)) return false;
-        const inRange = values.some(range => {
+        // 範囲フィルタ：いずれかの候補値が、選択中のいずれかの範囲に入ればOK
+        const inRange = candidates.some(num => !isUnknown(num) && values.some(range => {
           const [min, max] = range.split('-').map(Number);
           return num >= min && num <= max;
-        });
+        }));
         if (!inRange) return false;
       } else if (key === 'heat_shield' || key === 'lighting') {
         if (!values.includes(String(p[key]))) return false;
       } else {
-        if (!values.includes(String(p[key]))) return false;
+        // メーカー/台数/屋根材/屋根形状：いずれかの候補値が選択に含まれればOK
+        const match = candidates.some(v => values.includes(String(v)));
+        if (!match) return false;
       }
     }
     return true;
