@@ -75,12 +75,10 @@ function renderTable() {
 
     html += `<tr><th class="compare-row-label">${field.label}</th>`;
     products.forEach(p => {
-      const raw = p[field.key];
-      const display = formatField(field, raw);
-      const isBest = best !== null && !isUnknown(raw) && raw === best;
-      const unknownClass = isUnknown(raw) ? ' is-unknown' : '';
-      const bestClass = isBest ? ' is-best' : '';
-      html += `<td class="compare-cell${unknownClass}${bestClass}">${display}${isBest ? '<span class="best-badge">◎</span>' : ''}</td>`;
+      const cell = cellInfo(p, field);   // {display, unknown, isRange}
+      const isBest = !cell.isRange && best !== null && !isUnknown(p[field.key]) && p[field.key] === best;
+      const cls = (cell.unknown ? ' is-unknown' : '') + (isBest ? ' is-best' : '');
+      html += `<td class="compare-cell${cls}">${cell.display}${isBest ? '<span class="best-badge">◎</span>' : ''}</td>`;
     });
     html += '</tr>';
   });
@@ -102,6 +100,35 @@ function renderTable() {
   table.querySelectorAll('.compare-remove').forEach(btn => {
     btn.addEventListener('click', () => removeProduct(btn.dataset.id));
   });
+}
+
+// 範囲表示の対象フィールド（バリエーション商品のとき min〜max で表示）
+const RANGE_KEYS = ['price', 'size_type', 'width_mm', 'depth_mm', 'height_mm', 'clearance_mm', 'snow_resist_cm'];
+const SIZE_ORDER = ['1台用', '2台用', '3台用以上'];
+
+// 1セルの表示内容を返す（バリエーション商品は範囲、それ以外は単一）
+function cellInfo(p, field) {
+  const variants = Array.isArray(p.variants) ? p.variants : [];
+  // バリエーション商品 かつ 範囲対象フィールド
+  if (variants.length && RANGE_KEYS.includes(field.key)) {
+    if (field.key === 'size_type') {
+      const sizes = [...new Set(variants.map(v => v.size_type).filter(Boolean))]
+        .sort((a, b) => SIZE_ORDER.indexOf(a) - SIZE_ORDER.indexOf(b));
+      if (sizes.length === 0) return { display: '不明', unknown: true, isRange: false };
+      const txt = sizes.length === 1 ? sizes[0] : `${sizes[0]}〜${sizes[sizes.length - 1]}`;
+      return { display: txt, unknown: false, isRange: sizes.length > 1 };
+    }
+    // 数値フィールド：variant値（無ければモデル値）から min/max
+    let nums = variants.map(v => v[field.key]).filter(x => !isUnknown(x) && typeof x === 'number');
+    if (nums.length === 0 && !isUnknown(p[field.key])) nums = [p[field.key]];
+    if (nums.length === 0) return { display: '不明', unknown: true, isRange: false };
+    const min = Math.min(...nums), max = Math.max(...nums);
+    const disp = min === max ? formatField(field, min) : `${formatField(field, min)}〜${formatField(field, max)}`;
+    return { display: disp, unknown: false, isRange: min !== max };
+  }
+  // 通常
+  const raw = p[field.key];
+  return { display: formatField(field, raw), unknown: isUnknown(raw), isRange: false };
 }
 
 // 強調表示用：項目ごとの「最良値」を返す（対象外フィールドは null）
