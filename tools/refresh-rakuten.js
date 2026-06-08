@@ -101,27 +101,55 @@ async function main() {
 
   let updated = 0, skipped = 0, failed = 0;
 
+  // 1件分の取得＆反映（item_codeを持つオブジェクトに price/image_real/affiliate_url を入れる）
+  async function fill(obj) {
+    const item = await fetchItem(obj.rakuten_item_code, cfg);
+    if (!item) return false;
+    obj.price = item.itemPrice ?? obj.price;
+    const img = pickImage(item);
+    if (img) obj.image_real = img;
+    if (item.affiliateUrl) obj.affiliate_url = item.affiliateUrl;
+    else if (item.itemUrl) obj.affiliate_url = item.itemUrl;
+    return true;
+  }
+
   for (const p of d.products) {
+    // --- バリエーション・モデル：各variantを更新し、最安を親(from価格)に集約 ---
+    if (Array.isArray(p.variants) && p.variants.length) {
+      let okCount = 0;
+      for (const v of p.variants) {
+        if (!v.rakuten_item_code) continue;
+        try { if (await fill(v)) okCount++; }
+        catch (e) { console.warn(`  ✗ ${p.name}/${v.label} (${e.message})`); }
+        await new Promise(r => setTimeout(r, 800));
+      }
+      // 最安variantを親に反映（一覧の「〜」価格・代表画像・リンク）
+      const valid = p.variants.filter(v => v.price);
+      if (valid.length) {
+        const cheapest = valid.reduce((a, b) => (b.price < a.price ? b : a));
+        p.price = cheapest.price;
+        p.image_real = cheapest.image_real || p.image_real;
+        p.affiliate_url = cheapest.affiliate_url || p.affiliate_url;
+        p.affiliate_provider = '楽天市場';
+        if (!p.image_credit) p.image_credit = '画像・リンク提供：楽天市場';
+        console.log(`  ✓ ${p.name}（${valid.length}サイズ）→ ¥${p.price.toLocaleString()}〜`);
+        updated++;
+      } else { failed++; }
+      continue;
+    }
+
+    // --- 通常商品 ---
     if (!p.rakuten_item_code || p.rakuten_item_code === '') { skipped++; continue; }
     try {
-      const item = await fetchItem(p.rakuten_item_code, cfg);
-      if (!item) { console.warn(`  ⚠ 見つかりません: ${p.rakuten_item_code} (${p.name})`); failed++; continue; }
-
-      p.price = item.itemPrice ?? p.price;
-      const img = pickImage(item);
-      if (img) p.image_real = img;
-      if (item.affiliateUrl) p.affiliate_url = item.affiliateUrl;
-      else if (item.itemUrl) p.affiliate_url = item.itemUrl;
+      if (!await fill(p)) { console.warn(`  ⚠ 見つかりません: ${p.rakuten_item_code} (${p.name})`); failed++; continue; }
       p.affiliate_provider = '楽天市場';
       if (!p.image_credit) p.image_credit = '画像・リンク提供：楽天市場';
-
       console.log(`  ✓ ${p.name} → ¥${p.price.toLocaleString()}`);
       updated++;
     } catch (e) {
       console.warn(`  ✗ 取得失敗: ${p.name} (${e.message})`);
       failed++;
     }
-    // APIのレート制限に配慮して少し待つ
     await new Promise(r => setTimeout(r, 800));
   }
 

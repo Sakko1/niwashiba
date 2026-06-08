@@ -112,11 +112,16 @@ function renderProducts(list) {
   empty.hidden = list.length > 0;
 
   grid.innerHTML = list.map(p => {
+    const hasVariants = Array.isArray(p.variants) && p.variants.length > 0;
     const specs = CARD_SPECS.map(key => {
       const field = CARPORT_FIELDS.find(f => f.key === key);
+      let val = formatField(field, p[key]);
+      // バリエーションモデルは価格を「〜（から）」表記、サイズは範囲表記
+      if (hasVariants && key === 'price' && p.price) val += '〜';
+      if (hasVariants && key === 'size_type') val = p.size_type;
       return `<div class="spec-row">
                 <span class="spec-label">${field.label}</span>
-                <span class="spec-value">${formatField(field, p[key])}</span>
+                <span class="spec-value">${val}</span>
               </div>`;
     }).join('');
 
