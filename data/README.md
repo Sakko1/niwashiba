@@ -45,7 +45,7 @@
 | `image_credit` | 画像のクレジット表記（出典） | 文字列 | `"画像提供：楽天市場「○○エクステリア」"` | △ |
 | `affiliate_provider` | アフィリ提供元 | 文字列 | `"楽天市場"` / `"Amazon"` | △ |
 | `affiliate_url` | アフィリエイトリンク | 文字列 | `"https://hb.afl.rakuten.co.jp/..."` | △ |
-| `rakuten_item_code` | **楽天の商品コード**（自動取得の元） | 文字列 | `"jyupro:car-csc-kj"` | △ |
+| `rakuten_item_code` | **楽天の商品コード**（自動取得の元）`店舗:数値itemId` | 文字列 | `"jyupro:10130290"` | △ |
 
 > △ … アフィリエイト提携で正規画像を載せる場合に使用。空のままなら自動生成のSVGイラストが表示されます。
 
@@ -56,8 +56,15 @@
 `affiliate_url` / `image_credit` を埋めてくれます（価格改定時も再実行するだけ）。
 詳しくは [`docs/商品の管理方法.md`](../docs/商品の管理方法.md) を参照。
 
-**商品コードの調べ方**：楽天の商品ページURL `item.rakuten.co.jp/<店舗>/<商品>/` の
-`<店舗>` と `<商品>` を `:` でつなぐ。例 → `jyupro:car-csc-kj`
+**商品コードの調べ方（重要・2026年新API仕様）**：
+`店舗コード:数値itemId` の形式。`<商品>` 部分はURLの管理番号（英字含む）ではなく、
+**数値のitemId**が必要（新APIは英字混じりの管理番号を弾く）。
+itemIdは楽天の画像リンクHTML内の `item_id=XXXXXXXX` の数字。
+例：店舗 `jyupro` ＋ itemId `10130290` → `jyupro:10130290`
+
+> 認証は applicationId ＋ accessKey ＋ Originヘッダー(`https://sakko1.github.io`)。
+> GitHub Actionsが毎日6時(JST)に自動更新（Secretsに登録済み）。手動更新は
+> Actionsタブの「価格を自動更新（楽天API）」→ Run workflow。
 
 ## 不明な値の扱い
 
