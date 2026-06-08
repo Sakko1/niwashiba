@@ -29,19 +29,19 @@ const SERIES_SPECS = {
   'カーポートSC':   { roof: 'アルミ形材', shape: 'フラット', support: '片側支持', wind: 46, heat: false, warranty: 2 },
   'カーポートSW':   { roof: 'アルミ形材', shape: 'フラット', support: '片側支持', wind: 46, heat: false, warranty: 2 },
   'カーポートST':   { roof: 'ポリカーボネート', shape: 'フラット', support: null, wind: null, heat: false, warranty: 2 },
-  'ネスカ':         { roof: 'ポリカーボネート', shape: null, support: '片側支持', wind: 42, heat: false, warranty: 2 },
+  'ネスカ':         { roof: 'ポリカーボネート', shape: null, support: '片側支持', wind: 38, heat: false, warranty: 2 },
   'フーゴ':         { roof: 'ポリカーボネート', shape: null, support: '片側支持', wind: 42, heat: false, warranty: 2 },
   'アーキフラン':   { roof: 'ポリカーボネート', shape: 'フラット', support: null, wind: 42, heat: false, warranty: 2 },
   'プレシオ':       { roof: 'ポリカーボネート', shape: 'フラット', support: null, wind: 42, heat: false, warranty: 2 },
   'アリュース':     { roof: 'ポリカーボネート', shape: null, support: '片側支持', wind: 42, heat: false, warranty: 2 },
   'エフルージュ':   { roof: 'ポリカーボネート', shape: 'フラット', support: '片側支持', wind: 42, heat: false, warranty: 2 },
-  'ジーポート':     { roof: '折板', shape: 'フラット', support: '両側支持', wind: null, heat: false, warranty: 2 },
+  'ジーポート':     { roof: 'スチール折板', shape: 'フラット', support: '両側支持', wind: 46, heat: false, warranty: 2 },
   'レイナツインポート': { roof: '熱線遮断ポリカーボネート', shape: 'アール', support: '両側支持', wind: 42, heat: true, warranty: 2 },
   'レイナポート':   { roof: '熱線遮断ポリカーボネート', shape: 'アール', support: '片側支持', wind: 42, heat: true, warranty: 2 },
   'スカイリード':   { roof: 'ポリカーボネート', shape: 'フラット', support: null, wind: 46, heat: false, warranty: 2 },
-  'セルフィ':       { roof: 'ポリカーボネート', shape: 'フラット', support: '片側支持', wind: 46, heat: false, warranty: 2 },
+  'セルフィ':       { roof: 'ポリカーボネート', shape: 'フラット', support: '片側支持', wind: 34, heat: false, warranty: 2 },
   'ダブルフェース': { roof: 'アルミ形材', shape: 'フラット', support: '両側支持', wind: 46, heat: false, warranty: 2 },
-  'マイポート':     { roof: '折板', shape: 'フラット', support: '両側支持', wind: null, heat: false, warranty: 2 },
+  'マイポート':     { roof: 'アルミ形材', shape: 'フラット', support: '両側支持', wind: null, heat: false, warranty: 2 },
 };
 
 // 明らかに車用カーポートでない/ノイズの名前
