@@ -55,8 +55,8 @@ function loadConfig() {
   return c;
 }
 
-// 1商品分を楽天APIで取得
-async function fetchItem(itemCode, cfg) {
+// 1商品分を楽天APIで取得（レート制限時は自動リトライ）
+async function fetchItem(itemCode, cfg, attempt = 0) {
   const url = new URL(API);
   url.searchParams.set('applicationId', cfg.applicationId);
   url.searchParams.set('accessKey', cfg.accessKey);
@@ -71,6 +71,11 @@ async function fetchItem(itemCode, cfg) {
   const res = await fetch(url, {
     headers: { 'Origin': SITE_ORIGIN, 'Referer': SITE_ORIGIN + '/' },
   });
+  // 429（レート制限）/5xx は待って自動リトライ（最大4回）
+  if ((res.status === 429 || res.status >= 500) && attempt < 4) {
+    await new Promise(r => setTimeout(r, 2000 * (attempt + 1)));
+    return fetchItem(itemCode, cfg, attempt + 1);
+  }
   const data = await res.json().catch(() => ({}));
   // 新APIのエラー形式 {errors:{errorMessage}} / 旧形式 {error_description} の両対応
   if (data.errors) throw new Error(data.errors.errorMessage || JSON.stringify(data.errors));
