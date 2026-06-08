@@ -20,15 +20,19 @@ const ROOT = path.resolve(__dirname, '..');
 const JSON_PATH = path.join(ROOT, 'data', 'carport.json');
 const CONFIG_PATH = path.join(__dirname, 'rakuten-config.json');
 
-const API = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601';
+// 新・楽天 OpenAPI（applicationId + accessKey の2点認証）
+const API = 'https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260401';
 // 画像のサイズ（楽天画像URLの _ex=◯◯ を差し替えて高画質化）
 const IMG_SIZE = '400x400';
+// 新APIは Origin/Referer ヘッダーで認証（アプリ設定の「許可されたWebサイト」と一致が必要）
+const SITE_ORIGIN = process.env.RAKUTEN_ORIGIN || 'https://sakko1.github.io';
 
 function loadConfig() {
   // ① 環境変数を優先（GitHub Actions などの自動実行用）
   if (process.env.RAKUTEN_APP_ID) {
     return {
       applicationId: process.env.RAKUTEN_APP_ID,
+      accessKey: process.env.RAKUTEN_ACCESS_KEY || '',
       affiliateId: process.env.RAKUTEN_AFFILIATE_ID || '',
     };
   }
@@ -36,12 +40,16 @@ function loadConfig() {
   if (!fs.existsSync(CONFIG_PATH)) {
     console.error('✗ 認証情報がありません。');
     console.error('  ローカル: tools/rakuten-config.json を作成（example をコピー）');
-    console.error('  または環境変数 RAKUTEN_APP_ID / RAKUTEN_AFFILIATE_ID を設定してください。');
+    console.error('  または環境変数 RAKUTEN_APP_ID / RAKUTEN_ACCESS_KEY / RAKUTEN_AFFILIATE_ID を設定してください。');
     process.exit(1);
   }
   const c = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
   if (!c.applicationId || c.applicationId.includes('ここに')) {
     console.error('✗ applicationId が未設定です（楽天アプリID）。');
+    process.exit(1);
+  }
+  if (!c.accessKey || c.accessKey.includes('ここに')) {
+    console.error('✗ accessKey が未設定です（楽天アクセスキー）。');
     process.exit(1);
   }
   return c;
@@ -51,6 +59,7 @@ function loadConfig() {
 async function fetchItem(itemCode, cfg) {
   const url = new URL(API);
   url.searchParams.set('applicationId', cfg.applicationId);
+  url.searchParams.set('accessKey', cfg.accessKey);
   if (cfg.affiliateId && !cfg.affiliateId.includes('ここに')) {
     url.searchParams.set('affiliateId', cfg.affiliateId);
   }
@@ -59,11 +68,17 @@ async function fetchItem(itemCode, cfg) {
   url.searchParams.set('imageFlag', '1');
   url.searchParams.set('hits', '1');
 
-  const res = await fetch(url);
+  const res = await fetch(url, {
+    headers: { 'Origin': SITE_ORIGIN, 'Referer': SITE_ORIGIN + '/' },
+  });
+  const data = await res.json().catch(() => ({}));
+  // 新APIのエラー形式 {errors:{errorMessage}} / 旧形式 {error_description} の両対応
+  if (data.errors) throw new Error(data.errors.errorMessage || JSON.stringify(data.errors));
+  if (data.error) throw new Error(data.error_description || data.error);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  const data = await res.json();
   if (!data.Items || data.Items.length === 0) return null;
-  return data.Items[0].Item;
+  // 新APIは Items[i] が直接商品オブジェクト、旧APIは Items[i].Item の場合あり
+  return data.Items[0].Item || data.Items[0];
 }
 
 function pickImage(item) {

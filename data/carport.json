@@ -1,7 +1,7 @@
 {
   "category": "carport",
   "category_label": "カーポート",
-  "updated": "2026-06-07",
+  "updated": "2026-06-08",
   "products": [
     {
       "id": "lixil-carport-sc-1",
@@ -22,9 +22,9 @@
       "color": "オフブラック",
       "warranty_years": 2,
       "price": 395000,
-      "rakuten_item_code": "jyupro:car-csc-kj",
-      "image_real": "https://hbb.afl.rakuten.co.jp/hgb/54a929f3.becd46de.54a929f4.e7b12c3e/?me_id=1232965&item_id=10130290&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fjyupro%2Fcabinet%2Fcarport%2Fcar-csc-kj.jpg%3F_ex%3D240x240&s=240x240&t=pict",
-      "affiliate_url": "https://hb.afl.rakuten.co.jp/ichiba/54a929f3.becd46de.54a929f4.e7b12c3e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjyupro%2Fcar-csc-kj%2F&link_type=pict&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+      "rakuten_item_code": "jyupro:10130290",
+      "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/jyupro/cabinet/carport/car-csc-kj.jpg?_ex=400x400",
+      "affiliate_url": "https://hb.afl.rakuten.co.jp/hgc/g00qfd1n.hzthod50.g00qfd1n.hzthp799/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjyupro%2Fcar-csc-kj%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fjyupro%2Fi%2F10130290%2F&rafcid=wsc_i_is_1b6e621a-5961-43b3-b09c-c16d8e7c8097",
       "url": "https://www.lixil.co.jp/",
       "image_credit": "画像・リンク提供：楽天市場",
       "image": "images/carport/lixil-carport-sc-1.svg",
@@ -34,7 +34,7 @@
       "id": "lixil-carport-sc-1500-2",
       "name": "カーポートSC 1500 2台用（耐積雪50cm・木調色）",
       "maker": "LIXIL",
-      "price": null,
+      "price": 1169500,
       "size_type": "2台用",
       "width_mm": null,
       "depth_mm": null,
@@ -51,11 +51,11 @@
       "warranty_years": 2,
       "image": "images/carport/lixil-carport-sc-1500-2.svg",
       "url": "https://www.lixil.co.jp/",
-      "image_real": "https://hbb.afl.rakuten.co.jp/hgb/54a99a23.c8d8c43e.54a99a24.cbf3f0c6/?me_id=1330774&item_id=10004199&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fex-tama%2Fcabinet%2Fi%2Fcarport%2Flixil%2Fcarportsc1500_2top02.jpg%3F_ex%3D240x240&s=240x240&t=pict",
+      "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/ex-tama/cabinet/i/carport/lixil/carportsc1500_2top02.jpg?_ex=400x400",
       "image_credit": "画像・リンク提供：楽天市場",
       "affiliate_provider": "楽天市場",
-      "affiliate_url": "https://hb.afl.rakuten.co.jp/ichiba/54a99a23.c8d8c43e.54a99a24.cbf3f0c6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fex-tama%2F10004961%2F&link_type=pict&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
-      "rakuten_item_code": "ex-tama:10004961"
+      "affiliate_url": "https://hb.afl.rakuten.co.jp/hgc/g00sityn.hztho683.g00sityn.hzthpfef/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fex-tama%2F10004961%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fex-tama%2Fi%2F10004199%2F&rafcid=wsc_i_is_1b6e621a-5961-43b3-b09c-c16d8e7c8097",
+      "rakuten_item_code": "ex-tama:10004199"
     },
     {
       "id": "lixil-carport-st-1",

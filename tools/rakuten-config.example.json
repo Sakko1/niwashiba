@@ -1,5 +1,6 @@
 {
   "_comment": "このファイルを rakuten-config.json という名前でコピーし、自分のIDを入れてください（rakuten-config.json はGit管理外）",
-  "applicationId": "ここに楽天アプリIDを入れる",
+  "applicationId": "ここに楽天アプリID(UUID)を入れる",
+  "accessKey": "ここに楽天アクセスキーを入れる",
   "affiliateId": "ここに楽天アフィリエイトIDを入れる"
 }
