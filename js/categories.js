@@ -89,7 +89,6 @@ const CATEGORIES = {
     lead: 'タイプ・メーカー・適用畳数・明るさ・調光調色などで絞り込み、気になる照明を比較できます。',
 
     fields: [
-      { key: 'maker',        label: 'メーカー' },
       { key: 'price',        label: '価格（税込）', format: v => '¥' + Number(v).toLocaleString() },
       { key: 'type',         label: 'タイプ' },
       { key: 'tatami',       label: '適用畳数',   format: v => '〜' + v + '畳' },
@@ -97,10 +96,8 @@ const CATEGORIES = {
       { key: 'light_color',  label: '光色' },
       { key: 'light_source', label: '光源' },
       { key: 'power_w',      label: '消費電力',   format: v => v + ' W' },
-      { key: 'lifespan_h',   label: '設計寿命',   format: v => Number(v).toLocaleString() + ' 時間' },
       { key: 'remote',       label: 'リモコン',   format: v => (v ? '付属' : 'なし') },
       { key: 'mount',        label: '取付方式' },
-      { key: 'diameter_mm',  label: 'サイズ（径）', format: v => v + ' mm' },
     ],
 
     cardSpecs:  ['price', 'type', 'tatami', 'light_color'],
@@ -112,7 +109,6 @@ const CATEGORIES = {
     bestValue: { minBetter: ['price'], maxBetter: ['lumen', 'tatami'] },
 
     filters: [
-      { key: 'maker',        label: 'メーカー',  type: 'list' },
       { key: 'type',         label: 'タイプ',    type: 'list' },
       { key: 'price',        label: '価格帯',    type: 'range', ranges: [
         ['0-3000', '〜3,000円'], ['3000-7000', '3,000〜7,000円'],

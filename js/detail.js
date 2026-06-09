@@ -83,7 +83,7 @@ function render(p) {
         ${creditCaption}
       </div>
       <div class="detail-info">
-        <span class="detail-maker">${p.maker}</span>
+        ${p.maker ? `<span class="detail-maker">${p.maker}</span>` : ''}
         <h1 class="detail-name">${p.name}</h1>
         <div class="detail-price" id="detailPrice"></div>
         ${selectorHtml}

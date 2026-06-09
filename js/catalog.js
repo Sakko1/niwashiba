@@ -163,7 +163,7 @@ function renderProducts(list) {
       <article class="product-card">
         <a class="product-thumb" href="${detailUrl}">
           <img src="${imageSrc(p, '../')}" alt="${p.name}" loading="lazy" onerror="this.style.display='none';">
-          <span class="product-maker">${p.maker}</span>
+          ${p.maker ? `<span class="product-maker">${p.maker}</span>` : ''}
           ${credit}
         </a>
         <div class="product-body">
