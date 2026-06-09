@@ -3,8 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NiwaShiba - 建築資材・商品比較サイト</title>
+  <title>NiwaShiba｜建築資材・住宅設備を画像で選んで比較できるサイト</title>
+  <meta name="description" content="NiwaShiba（ニワシバ）は、カーポートや照明などの建築資材・住宅設備を画像で直感的に選び、価格やスペックを並べて比較できる商品比較サイト。気になる商品をパッと選んで、最短で購入へ。">
+  <link rel="canonical" href="https://sakko1.github.io/niwashiba/">
+  <meta property="og:title" content="NiwaShiba｜建築資材・住宅設備を画像で選んで比較">
+  <meta property="og:description" content="カーポートや照明を画像で直感的に選び、価格・スペックを並べて比較。最短で「これだ」が見つかる商品比較サイト。">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NiwaShiba">
+  <meta property="og:url" content="https://sakko1.github.io/niwashiba/">
+  <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "Organization", "name": "NiwaShiba", "url": "https://sakko1.github.io/niwashiba/" },
+      { "@type": "WebSite", "name": "NiwaShiba", "url": "https://sakko1.github.io/niwashiba/",
+        "description": "建築資材・住宅設備を画像で選んで比較できる商品比較サイト" }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -247,6 +265,25 @@
     </div>
   </section>
 
+  <!-- 選び方ガイド -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">選び方ガイド</h2>
+      <div class="features-grid">
+        <a class="feature-item" href="guide-carport.html">
+          <div class="feature-icon">🚗</div>
+          <h3>カーポートの選び方</h3>
+          <p>サイズ・屋根材・耐風耐雪・柱の位置・価格相場まで、失敗しない選び方を解説。</p>
+        </a>
+        <a class="feature-item" href="guide-lighting.html">
+          <div class="feature-icon">💡</div>
+          <h3>照明の選び方</h3>
+          <p>タイプ・適用畳数・明るさ(lm)・光色・調光調色など、はじめてでも分かる基礎知識。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- フッター -->
   <footer class="footer">
     <div class="container footer-inner">
@@ -257,10 +294,11 @@
       </div>
       <nav class="footer-nav">
         <ul>
-          <li><a href="index.html">ホーム</a></li>
           <li><a href="#categories">カテゴリー</a></li>
-          <li><a href="about.html">このサイトについて</a></li>
-          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="guide-carport.html">カーポートの選び方</a></li>
+          <li><a href="guide-lighting.html">照明の選び方</a></li>
+          <li><a href="about.html">運営者情報</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
         </ul>
       </nav>
       <p class="footer-copy">&copy; 2026 NiwaShiba. All rights reserved.</p>

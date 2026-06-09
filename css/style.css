@@ -1713,3 +1713,93 @@ a.compare-prod-link:hover .compare-prod-name {
     justify-content: space-between;
   }
 }
+
+/* ===========================
+   ドキュメント／ガイド／規約ページ
+=========================== */
+.doc {
+  max-width: 820px;
+  padding: 8px 20px 64px;
+}
+.doc-title {
+  font-size: clamp(22px, 3.4vw, 30px);
+  font-weight: 800;
+  color: var(--gray-800);
+  margin: 14px 0 6px;
+}
+.doc-updated {
+  font-size: 12px;
+  color: var(--gray-400);
+  margin-bottom: 24px;
+}
+.doc-lead {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--gray-700);
+  background: var(--green-pale);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-bottom: 28px;
+}
+.doc h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--green-dark);
+  margin: 34px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--green-light);
+}
+.doc h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-800);
+  margin: 22px 0 8px;
+}
+.doc p, .doc li {
+  font-size: 14.5px;
+  line-height: 1.95;
+  color: var(--gray-700);
+}
+.doc p { margin-bottom: 14px; }
+.doc ul, .doc ol {
+  margin: 0 0 16px 1.2em;
+  list-style: revert;
+}
+.doc li { margin-bottom: 6px; }
+.doc strong { color: var(--gray-800); font-weight: 700; }
+.doc a { color: var(--green-dark); text-decoration: underline; }
+.doc table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 20px;
+  font-size: 13.5px;
+}
+.doc th, .doc td {
+  border: 1px solid var(--gray-200);
+  padding: 9px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+.doc th { background: var(--green-pale); font-weight: 700; white-space: nowrap; }
+.doc-note {
+  font-size: 12px;
+  color: var(--gray-400);
+  border-top: 1px dashed var(--gray-200);
+  padding-top: 14px;
+  margin-top: 28px;
+}
+.doc-cta {
+  text-align: center;
+  margin: 36px 0 0;
+}
+/* ガイドの目次 */
+.doc-toc {
+  background: var(--white);
+  border: 1px solid var(--green-light);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-bottom: 28px;
+}
+.doc-toc-title { font-size: 13px; font-weight: 700; color: var(--green-dark); margin-bottom: 8px; }
+.doc-toc ul { margin: 0 0 0 1.1em; }
+.doc-toc a { font-size: 13.5px; }
