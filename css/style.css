@@ -463,6 +463,93 @@ img { max-width: 100%; display: block; }
 }
 
 /* ===========================
+   価値訴求：選び方3ステップ
+=========================== */
+.howto-lead {
+  text-align: center;
+  font-size: 16px;
+  line-height: 2;
+  color: var(--gray-800);
+  margin: -12px auto 36px;
+  max-width: 680px;
+}
+
+.howto-lead strong {
+  color: var(--green-dark);
+  font-weight: 800;
+  background: linear-gradient(transparent 65%, rgba(125,196,76,.28) 65%);
+}
+
+.howto-steps {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 14px;
+}
+
+.howto-step {
+  position: relative;
+  flex: 1 1 0;
+  max-width: 300px;
+  background: var(--white);
+  border: 1px solid var(--green-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 28px 20px 22px;
+  text-align: center;
+}
+
+.howto-num {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--green-main);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.howto-icon {
+  font-size: 44px;
+  margin: 6px 0 10px;
+}
+
+.howto-step h3 {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--gray-800);
+  margin-bottom: 8px;
+}
+
+.howto-step p {
+  font-size: 13px;
+  color: var(--gray-600);
+  line-height: 1.7;
+}
+
+.howto-arrow {
+  display: flex;
+  align-items: center;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--green-main);
+  flex-shrink: 0;
+}
+
+.howto-cta {
+  text-align: center;
+  margin-top: 32px;
+}
+
+/* ===========================
    フッター
 =========================== */
 .footer {
@@ -1529,6 +1616,26 @@ a.compare-prod-link:hover .compare-prod-name {
 
   .features-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* 3ステップ：縦積み・矢印を下向きに */
+  .howto-steps {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .howto-step {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .howto-arrow {
+    transform: rotate(90deg);
+    justify-content: center;
+  }
+
+  .howto-lead {
+    font-size: 14px;
   }
 
   /* カタログ：1カラム化、フィルタを上部に */

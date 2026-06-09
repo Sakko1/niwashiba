@@ -48,8 +48,8 @@
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-text">
-        <h1>建築資材を<br>もっとかんたんに選ぼう</h1>
-        <p>キッチン・お風呂・床材・照明など、<br>同カテゴリーの商品を一括比較できます。</p>
+        <h1>見て選ぶだけ。<br>あとは、比べて買うだけ。</h1>
+        <p>気になる商品を<strong>画像でパッと選んで</strong>、<br>スペックを並べて比較。<br>ネット上のあらゆる商品から、最短で「これだ」が見つかる。</p>
         <a href="#categories" class="btn btn-primary">カテゴリーから探す</a>
       </div>
       <div class="hero-mascot">
@@ -127,14 +127,20 @@
       <h2 class="section-title">カテゴリーから探す</h2>
       <div class="category-grid">
 
-        <!-- 公開中：カーポート -->
+        <!-- 公開中（先頭に配置） -->
         <a href="category/carport.html" class="category-card">
           <div class="category-icon">🚗</div>
           <div class="category-name">カーポート</div>
           <div class="category-desc">1台用・2台用・ワイドタイプ</div>
         </a>
 
-        <!-- 準備中：以下は選択不可 -->
+        <a href="category/lighting.html" class="category-card">
+          <div class="category-icon">💡</div>
+          <div class="category-name">照明</div>
+          <div class="category-desc">シーリング・ペンダント・ダウンライト他</div>
+        </a>
+
+        <!-- 準備中（以下は選択不可） -->
         <div class="category-card category-card--soon" aria-disabled="true">
           <span class="soon-badge">Coming Soon</span>
           <div class="category-icon">🍳</div>
@@ -170,12 +176,6 @@
           <div class="category-desc">無垢材・複合フローリング</div>
         </div>
 
-        <a href="category/lighting.html" class="category-card">
-          <div class="category-icon">💡</div>
-          <div class="category-name">照明</div>
-          <div class="category-desc">シーリング・ペンダント・ダウンライト他</div>
-        </a>
-
         <div class="category-card category-card--soon" aria-disabled="true">
           <span class="soon-badge">Coming Soon</span>
           <div class="category-icon">🧱</div>
@@ -208,26 +208,41 @@
     </div>
   </section>
 
-  <!-- 特徴セクション -->
-  <section class="features section section--green">
+  <!-- 価値訴求：選び方3ステップ -->
+  <section class="howto section section--green">
     <div class="container">
-      <h2 class="section-title">NiwaShibaでできること</h2>
-      <div class="features-grid">
-        <div class="feature-item">
-          <div class="feature-icon">📋</div>
-          <h3>一括比較</h3>
-          <p>同カテゴリーの商品をスペック・価格・メーカーで並べて比較できます。</p>
+      <h2 class="section-title">迷う時間を、ぐっと短く。</h2>
+      <p class="howto-lead">
+        ネット上のあらゆる商品から、<strong>画像を見て直感でパッと選ぶ</strong>。<br>
+        選んだ商品の<strong>性能を並べて比較</strong>できるから、<br>
+        商品選びから購入まで<strong>スピーディー</strong>に。
+      </p>
+
+      <div class="howto-steps">
+        <div class="howto-step">
+          <span class="howto-num">1</span>
+          <div class="howto-icon">🖼️</div>
+          <h3>画像で直感的に選ぶ</h3>
+          <p>ずらりと並んだ商品画像から、気になるものをパッと選択。</p>
         </div>
-        <div class="feature-item">
-          <div class="feature-icon">🔍</div>
-          <h3>条件で絞り込み</h3>
-          <p>価格帯・メーカー・機能など細かい条件で自分に合った商品を探せます。</p>
+        <div class="howto-arrow">→</div>
+        <div class="howto-step">
+          <span class="howto-num">2</span>
+          <div class="howto-icon">📊</div>
+          <h3>スペックを並べて比較</h3>
+          <p>価格・性能・機能を一覧表でひと目で比較。違いがすぐ分かる。</p>
         </div>
-        <div class="feature-item">
-          <div class="feature-icon">📖</div>
-          <h3>選び方ガイド</h3>
-          <p>ニワとシバが建築資材の選び方をわかりやすく解説します。</p>
+        <div class="howto-arrow">→</div>
+        <div class="howto-step">
+          <span class="howto-num">3</span>
+          <div class="howto-icon">🛒</div>
+          <h3>最短で購入へ</h3>
+          <p>「これだ」と思ったら、購入ページへワンクリックで。</p>
         </div>
+      </div>
+
+      <div class="howto-cta">
+        <a href="#categories" class="btn btn-primary">さっそく選んでみる</a>
       </div>
     </div>
   </section>
