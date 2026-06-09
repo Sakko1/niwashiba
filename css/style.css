@@ -717,7 +717,7 @@ img { max-width: 100%; display: block; }
 
 .product-thumb img.noimg::after,
 .product-thumb::before {
-  content: '🚗';
+  content: var(--thumb-emoji, '🚗');
   position: absolute;
   inset: 0;
   display: flex;
@@ -967,7 +967,7 @@ img { max-width: 100%; display: block; }
 }
 
 .compare-prod-thumb::before {
-  content: '🚗';
+  content: var(--thumb-emoji, '🚗');
   position: absolute;
   inset: 0;
   display: flex;

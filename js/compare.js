@@ -4,7 +4,7 @@
    - data/carport.json から該当商品を取得し、表で比較
 ========================================================= */
 
-const DATA_PATH = 'data/carport.json';
+const DATA_PATH = 'data/' + CAT.dataPath;
 
 let products = [];
 
@@ -69,7 +69,7 @@ function renderTable() {
   html += '</tr></thead><tbody>';
 
   // 各フィールド行
-  CARPORT_FIELDS.forEach(field => {
+  FIELDS.forEach(field => {
     // この行で最良値を強調（価格は最安、耐雪・耐風・保証・有効高さは最大）
     const best = getBestValue(field.key);
 
@@ -103,8 +103,8 @@ function renderTable() {
 }
 
 // 範囲表示の対象フィールド（バリエーション商品のとき min〜max で表示）
-const RANGE_KEYS = ['price', 'size_type', 'width_mm', 'depth_mm', 'height_mm', 'clearance_mm', 'snow_resist_cm'];
-const SIZE_ORDER = ['1台用', '2台用', '3台用以上'];
+const RANGE_KEYS = CAT.rangeKeys;
+const SIZE_ORDER = CAT.sizeOrder;
 
 // 1セルの表示内容を返す（バリエーション商品は範囲、それ以外は単一）
 function cellInfo(p, field) {
@@ -133,8 +133,8 @@ function cellInfo(p, field) {
 
 // 強調表示用：項目ごとの「最良値」を返す（対象外フィールドは null）
 function getBestValue(key) {
-  const minBetter = ['price'];
-  const maxBetter = ['snow_resist_cm', 'wind_resist_mps', 'warranty_years', 'clearance_mm'];
+  const minBetter = CAT.bestValue.minBetter;
+  const maxBetter = CAT.bestValue.maxBetter;
 
   let nums = products.map(p => p[key]).filter(v => !isUnknown(v) && typeof v === 'number');
   if (nums.length < 2) return null;  // 比較対象が1つ以下なら強調しない

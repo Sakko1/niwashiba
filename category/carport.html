@@ -71,70 +71,8 @@
   <!-- メイン -->
   <div class="catalog container">
 
-    <!-- 絞り込みサイドバー -->
-    <aside class="filters" id="filters">
-      <div class="filters-head">
-        <h2>絞り込み</h2>
-        <button type="button" class="filters-reset" id="filterReset">リセット</button>
-      </div>
-
-      <!-- メーカー -->
-      <div class="filter-group">
-        <h3>メーカー</h3>
-        <div class="filter-options" data-filter="maker"></div>
-      </div>
-
-      <!-- 台数 -->
-      <div class="filter-group">
-        <h3>サイズ・台数</h3>
-        <div class="filter-options" data-filter="size_type"></div>
-      </div>
-
-      <!-- 価格帯 -->
-      <div class="filter-group">
-        <h3>価格帯</h3>
-        <div class="filter-options" data-filter="price">
-          <label><input type="checkbox" value="0-200000">〜20万円</label>
-          <label><input type="checkbox" value="200000-400000">20〜40万円</label>
-          <label><input type="checkbox" value="400000-600000">40〜60万円</label>
-          <label><input type="checkbox" value="600000-99999999">60万円〜</label>
-        </div>
-      </div>
-
-      <!-- 屋根材 -->
-      <div class="filter-group">
-        <h3>屋根材</h3>
-        <div class="filter-options" data-filter="roof_material"></div>
-      </div>
-
-      <!-- 屋根形状 -->
-      <div class="filter-group">
-        <h3>屋根形状</h3>
-        <div class="filter-options" data-filter="roof_shape"></div>
-      </div>
-
-      <!-- 耐積雪 -->
-      <div class="filter-group">
-        <h3>耐積雪</h3>
-        <div class="filter-options" data-filter="snow_resist_cm">
-          <label><input type="checkbox" value="0-20">〜20cm</label>
-          <label><input type="checkbox" value="21-50">21〜50cm</label>
-          <label><input type="checkbox" value="51-100">51〜100cm</label>
-          <label><input type="checkbox" value="101-9999">100cm超（豪雪地）</label>
-        </div>
-      </div>
-
-      <!-- 機能 -->
-      <div class="filter-group">
-        <h3>機能</h3>
-        <div class="filter-options" data-filter="heat_shield">
-          <label><input type="checkbox" value="true">熱線遮断あり</label>
-        </div>
-        <div class="filter-options" data-filter="lighting">
-          <label><input type="checkbox" value="true">天井照明あり</label>
-        </div>
-      </div>
-    </aside>
+    <!-- 絞り込みサイドバー（catalog.js がカテゴリー設定から生成） -->
+    <aside class="filters" id="filters"></aside>
 
     <!-- 商品一覧 -->
     <main class="products">
@@ -142,12 +80,7 @@
         <span class="products-count" id="productsCount">読み込み中…</span>
         <label class="sort-control">
           並び替え：
-          <select id="sortSelect">
-            <option value="default">おすすめ順</option>
-            <option value="price-asc">価格が安い順</option>
-            <option value="price-desc">価格が高い順</option>
-            <option value="snow-desc">耐積雪が高い順</option>
-          </select>
+          <select id="sortSelect"></select>
         </label>
       </div>
 
@@ -179,8 +112,9 @@
     </div>
   </footer>
 
+  <script>window.NIWA_CATEGORY = 'carport';</script>
   <script src="../js/main.js"></script>
-  <script src="../js/fields.js"></script>
-  <script src="../js/carport.js"></script>
+  <script src="../js/categories.js"></script>
+  <script src="../js/catalog.js"></script>
 </body>
 </html>
