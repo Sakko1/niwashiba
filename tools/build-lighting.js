@@ -12,7 +12,7 @@ const ROOT = path.resolve(__dirname, '..');
 const OUT = path.join(ROOT, 'data', 'lighting.json');
 const API = 'https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260401';
 const ORIGIN = process.env.RAKUTEN_ORIGIN || 'https://sakko1.github.io';
-const PER_TYPE = 12, PAGES = 2, MINPRICE = 1500;
+const PER_TYPE = 24, PAGES = 6, MINPRICE = 1500;
 
 const cfg = { a: process.env.RAKUTEN_APP_ID, k: process.env.RAKUTEN_ACCESS_KEY, f: process.env.RAKUTEN_AFFILIATE_ID };
 
@@ -89,13 +89,13 @@ async function fetchPage(kw, page, sort, attempt = 0) {
   return d;
 }
 
-async function buildType(T, seen) {
+async function buildType(T, seen, need) {
   const out = [];
-  for (let p = 1; p <= PAGES && out.length < PER_TYPE; p++) {
+  for (let p = 1; p <= PAGES && out.length < need; p++) {
     const d = await fetchPage(T.kw, p, '-reviewCount');
     if (d.errors) { console.warn(`  ${T.label}: ${d.errors.errorMessage}`); break; }
     for (const w of (d.Items || [])) {
-      if (out.length >= PER_TYPE) break;
+      if (out.length >= need) break;
       const i = w.Item || w; const n = i.itemName || ''; const cap = i.itemCaption || '';
       const text = n + ' ' + cap;
       if (!T.re.test(n) || NG.test(n) || !i.itemPrice || i.itemPrice < MINPRICE) continue;
@@ -120,15 +120,24 @@ async function buildType(T, seen) {
 }
 
 (async () => {
-  const seen = new Set();
-  let products = [];
+  // 追記モード：既存があれば保持し、各タイプ PER_TYPE 件になるまで新規を追加
+  let existing = [];
+  if (fs.existsSync(OUT)) { try { existing = JSON.parse(fs.readFileSync(OUT, 'utf8')).products || []; } catch (e) {} }
+  const seen = new Set(existing.map(p => p.rakuten_item_code));
+  const countByType = {};
+  existing.forEach(p => { countByType[p.type] = (countByType[p.type] || 0) + 1; });
+
+  let added = [];
   for (const T of TYPES) {
-    const items = await buildType(T, seen);
-    products = products.concat(items);
-    console.log(`  ✓ ${T.label}: ${items.length}件`);
+    const need = Math.max(0, PER_TYPE - (countByType[T.label] || 0));
+    if (need === 0) { console.log(`  - ${T.label}: 既に${countByType[T.label]}件（追加なし）`); continue; }
+    const items = await buildType(T, seen, need);
+    added = added.concat(items);
+    console.log(`  ✓ ${T.label}: +${items.length}件（計${(countByType[T.label] || 0) + items.length}）`);
     await new Promise(x => setTimeout(x, 1500));
   }
+  const products = existing.concat(added);
   const out = { category: 'lighting', category_label: '照明', updated: new Date().toISOString().slice(0, 10), products };
   fs.writeFileSync(OUT, JSON.stringify(out, null, 2) + '\n', 'utf8');
-  console.log(`\n完了: ${products.length}件 → data/lighting.json`);
+  console.log(`\n完了: 既存${existing.length} + 新規${added.length} = ${products.length}件`);
 })();
