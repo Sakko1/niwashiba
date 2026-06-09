@@ -11,6 +11,12 @@ let products = [];
 document.addEventListener('DOMContentLoaded', init);
 
 async function init() {
+  // パンくず・空表示のリンクを現在カテゴリーに合わせる
+  const crumb = document.getElementById('crumbCat');
+  if (crumb) { crumb.href = 'category/' + CAT.listPage; crumb.textContent = CAT.label; }
+  const emptyLink = document.getElementById('emptyLink');
+  if (emptyLink) { emptyLink.href = 'category/' + CAT.listPage; emptyLink.textContent = `${CAT.label}一覧から選ぶ`; }
+
   const ids = getCompareList();
 
   if (ids.length === 0) {

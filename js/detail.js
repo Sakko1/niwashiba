@@ -106,7 +106,7 @@ function render(p) {
     </section>
     <div class="detail-foot">
       <a href="${CAT.listPage}" class="detail-back">← ${CAT.label}一覧に戻る</a>
-      <a href="../compare.html" class="btn btn-outline">比較表を見る</a>
+      <a href="../compare.html?category=${CAT.id}" class="btn btn-outline">比較表を見る</a>
     </div>`;
 
   function apply() {

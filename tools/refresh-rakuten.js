@@ -17,7 +17,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const JSON_PATH = path.join(ROOT, 'data', 'carport.json');
+const DATA_DIR = path.join(ROOT, 'data');
 const CONFIG_PATH = path.join(__dirname, 'rakuten-config.json');
 
 // 新・楽天 OpenAPI（applicationId + accessKey の2点認証）
@@ -97,9 +97,17 @@ function pickImage(item) {
 
 async function main() {
   const cfg = loadConfig();
-  const d = JSON.parse(fs.readFileSync(JSON_PATH, 'utf8'));
+  const files = fs.readdirSync(DATA_DIR).filter(f => f.endsWith('.json'));
+  let grand = { updated: 0, failed: 0 };
 
-  let updated = 0, skipped = 0, failed = 0;
+  for (const file of files) {
+    const JSON_PATH = path.join(DATA_DIR, file);
+    let d;
+    try { d = JSON.parse(fs.readFileSync(JSON_PATH, 'utf8')); } catch (e) { continue; }
+    if (!Array.isArray(d.products)) continue;
+    if (!d.products.some(p => p.rakuten_item_code || (Array.isArray(p.variants) && p.variants.length))) continue;
+    console.log(`\n[${file}]`);
+    let updated = 0, skipped = 0, failed = 0;
 
   // 1件分の取得＆反映（item_codeを持つオブジェクトに price/image_real/affiliate_url を入れる）
   async function fill(obj) {
@@ -153,12 +161,13 @@ async function main() {
     await new Promise(r => setTimeout(r, 800));
   }
 
-  d.updated = new Date().toISOString().slice(0, 10);
-  fs.writeFileSync(JSON_PATH, JSON.stringify(d, null, 2) + '\n', 'utf8');
+    d.updated = new Date().toISOString().slice(0, 10);
+    fs.writeFileSync(JSON_PATH, JSON.stringify(d, null, 2) + '\n', 'utf8');
+    console.log(`  更新 ${updated} / スキップ ${skipped} / 失敗 ${failed}（${file}）`);
+    grand.updated += updated; grand.failed += failed;
+  }
 
-  console.log('---');
-  console.log(`更新 ${updated} 件 / スキップ ${skipped} 件 / 失敗 ${failed} 件`);
-  console.log('data/carport.json を更新しました。');
+  console.log('\n=== 全体: 更新 ' + grand.updated + ' 件 / 失敗 ' + grand.failed + ' 件 ===');
 }
 
 main().catch(e => { console.error(e); process.exit(1); });

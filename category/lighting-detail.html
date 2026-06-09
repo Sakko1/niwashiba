@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>カーポート 一覧・比較 | NiwaShiba</title>
+  <title>商品詳細 | NiwaShiba</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -25,7 +25,8 @@
         <ul>
           <li><a href="../index.html">ホーム</a></li>
           <li><a href="../index.html#categories">カテゴリー</a></li>
-          <li><a href="carport.html" class="active">カーポート</a></li>
+          <li><a href="lighting.html">照明</a></li>
+          <li><a href="../compare.html">比較する</a></li>
         </ul>
       </nav>
       <button class="hamburger" id="hamburgerBtn" aria-label="メニュー">
@@ -36,7 +37,8 @@
       <ul>
         <li><a href="../index.html">ホーム</a></li>
         <li><a href="../index.html#categories">カテゴリー</a></li>
-        <li><a href="carport.html">カーポート</a></li>
+        <li><a href="lighting.html">照明</a></li>
+        <li><a href="../compare.html">比較する</a></li>
       </ul>
     </nav>
   </header>
@@ -45,19 +47,9 @@
   <div class="breadcrumb container">
     <a href="../index.html">ホーム</a>
     <span>›</span>
-    <span>カーポート</span>
-  </div>
-
-  <!-- ページ見出し -->
-  <div class="page-head container">
-    <div class="page-head-text">
-      <h1>🚗 カーポート 一覧・比較</h1>
-      <p>メーカー・価格・サイズ・耐久性などで絞り込み、気になる商品を比較できます。</p>
-    </div>
-    <div class="page-head-mascot">
-      <span class="char-chicken">🐔</span>
-      <span class="char-dog">🐕</span>
-    </div>
+    <a href="lighting.html">照明</a>
+    <span>›</span>
+    <span id="crumbName">商品詳細</span>
   </div>
 
   <!-- アフィリエイト表記（ステマ規制対応） -->
@@ -68,37 +60,10 @@
     </p>
   </div>
 
-  <!-- メイン -->
-  <div class="catalog container">
-
-    <!-- 絞り込みサイドバー（catalog.js がカテゴリー設定から生成） -->
-    <aside class="filters" id="filters"></aside>
-
-    <!-- 商品一覧 -->
-    <main class="products">
-      <div class="products-toolbar">
-        <span class="products-count" id="productsCount">読み込み中…</span>
-        <label class="sort-control">
-          並び替え：
-          <select id="sortSelect"></select>
-        </label>
-      </div>
-
-      <div class="product-grid" id="productGrid"></div>
-      <p class="products-empty" id="productsEmpty" hidden>条件に合う商品が見つかりませんでした。</p>
-    </main>
-  </div>
-
-  <!-- 比較バー（固定） -->
-  <div class="compare-bar" id="compareBar" hidden>
-    <div class="compare-bar-inner container">
-      <span class="compare-bar-count"><strong id="compareCount">0</strong> 件を選択中</span>
-      <div class="compare-bar-actions">
-        <button type="button" class="compare-bar-clear" id="compareClear">クリア</button>
-        <a href="../compare.html?category=carport" class="btn btn-primary compare-bar-go">比較表を見る</a>
-      </div>
-    </div>
-  </div>
+  <!-- 詳細本体（JSで描画） -->
+  <main class="detail container" id="detailMain">
+    <p class="detail-loading">読み込み中…</p>
+  </main>
 
   <!-- フッター -->
   <footer class="footer">
@@ -112,9 +77,9 @@
     </div>
   </footer>
 
-  <script>window.NIWA_CATEGORY = 'carport';</script>
+  <script>window.NIWA_CATEGORY = 'lighting';</script>
   <script src="../js/main.js"></script>
   <script src="../js/categories.js"></script>
-  <script src="../js/catalog.js"></script>
+  <script src="../js/detail.js"></script>
 </body>
 </html>

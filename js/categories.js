@@ -77,10 +77,62 @@ const CATEGORIES = {
     ],
   },
 
-  /* 新カテゴリーはここに追加（例）
-  kitchen: { id:'kitchen', label:'キッチン', emoji:'🍳', dataPath:'kitchen.json',
-             storageKey:'niwashiba_compare_kitchen', fields:[...], filters:[...], ... },
-  */
+  /* ====================== 照明 ====================== */
+  lighting: {
+    id: 'lighting',
+    label: '照明',
+    emoji: '💡',
+    dataPath: 'lighting.json',
+    storageKey: 'niwashiba_compare_lighting',
+    listPage: 'lighting.html',
+    detailPage: 'lighting-detail.html',
+    lead: 'タイプ・メーカー・適用畳数・明るさ・調光調色などで絞り込み、気になる照明を比較できます。',
+
+    fields: [
+      { key: 'maker',        label: 'メーカー' },
+      { key: 'price',        label: '価格（税込）', format: v => '¥' + Number(v).toLocaleString() },
+      { key: 'type',         label: 'タイプ' },
+      { key: 'tatami',       label: '適用畳数',   format: v => '〜' + v + '畳' },
+      { key: 'lumen',        label: '明るさ',     format: v => Number(v).toLocaleString() + ' lm' },
+      { key: 'light_color',  label: '光色' },
+      { key: 'light_source', label: '光源' },
+      { key: 'power_w',      label: '消費電力',   format: v => v + ' W' },
+      { key: 'lifespan_h',   label: '設計寿命',   format: v => Number(v).toLocaleString() + ' 時間' },
+      { key: 'remote',       label: 'リモコン',   format: v => (v ? '付属' : 'なし') },
+      { key: 'mount',        label: '取付方式' },
+      { key: 'diameter_mm',  label: 'サイズ（径）', format: v => v + ' mm' },
+    ],
+
+    cardSpecs:  ['price', 'type', 'tatami', 'light_color'],
+    highlights: ['type', 'tatami', 'lumen', 'light_color'],
+
+    rangeKeys: ['price', 'tatami', 'lumen'],
+    sizeOrder: [],
+
+    bestValue: { minBetter: ['price'], maxBetter: ['lumen', 'tatami'] },
+
+    filters: [
+      { key: 'maker',        label: 'メーカー',  type: 'list' },
+      { key: 'type',         label: 'タイプ',    type: 'list' },
+      { key: 'price',        label: '価格帯',    type: 'range', ranges: [
+        ['0-3000', '〜3,000円'], ['3000-7000', '3,000〜7,000円'],
+        ['7000-15000', '7,000〜1.5万円'], ['15000-99999999', '1.5万円〜'] ] },
+      { key: 'tatami',       label: '適用畳数',  type: 'range', ranges: [
+        ['0-6', '〜6畳'], ['7-8', '〜8畳'], ['9-12', '〜12畳'], ['13-99', '14畳以上'] ] },
+      { key: 'light_color',  label: '光色',      type: 'list' },
+      { key: 'light_source', label: '光源',      type: 'list' },
+      { key: 'features',     label: '機能',      type: 'bool', items: [
+        { key: 'remote', label: 'リモコン付き' } ] },
+    ],
+
+    sorts: [
+      { value: 'default',    label: 'おすすめ順' },
+      { value: 'price-asc',  label: '価格が安い順', num: 'price', dir: 1 },
+      { value: 'price-desc', label: '価格が高い順', num: 'price', dir: -1 },
+      { value: 'lumen-desc', label: '明るい順',     num: 'lumen', dir: -1 },
+      { value: 'tatami-desc',label: '広い部屋向け順', num: 'tatami', dir: -1 },
+    ],
+  },
 };
 
 // 現在のカテゴリー設定

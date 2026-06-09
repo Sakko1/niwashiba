@@ -47,7 +47,7 @@
   <div class="breadcrumb container">
     <a href="index.html">ホーム</a>
     <span>›</span>
-    <a href="category/carport.html">カーポート</a>
+    <a href="category/carport.html" id="crumbCat">カーポート</a>
     <span>›</span>
     <span>比較</span>
   </div>
@@ -72,7 +72,7 @@
         <span class="char-dog">🐕</span>
       </div>
       <p>比較する商品が選択されていません。</p>
-      <a href="category/carport.html" class="btn btn-primary">カーポート一覧から選ぶ</a>
+      <a href="category/carport.html" class="btn btn-primary" id="emptyLink">一覧から選ぶ</a>
     </div>
 
     <!-- 比較表 -->
@@ -93,7 +93,7 @@
     </div>
   </footer>
 
-  <script>window.NIWA_CATEGORY = 'carport';</script>
+  <script>window.NIWA_CATEGORY = new URLSearchParams(location.search).get('category') || 'carport';</script>
   <script src="js/main.js"></script>
   <script src="js/categories.js"></script>
   <script src="js/compare.js"></script>
