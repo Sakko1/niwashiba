@@ -54,6 +54,9 @@ function buildFilterUI() {
         html += `<div class="filter-options" data-filter="${it.key}" data-type="bool">` +
           `<label><input type="checkbox" value="true">${it.label}</label></div>`;
       });
+    } else if (f.type === 'tags') { // 部分一致（光色など）
+      html += `<div class="filter-options" data-filter="${f.key}" data-type="tags">` +
+        f.tags.map(([v, l]) => `<label><input type="checkbox" value="${v}">${l}</label>`).join('') + `</div>`;
     } else { // list（データから後で options 充填）
       html += `<div class="filter-options" data-filter="${f.key}" data-type="list"></div>`;
     }
@@ -116,6 +119,10 @@ function applyFilters() {
         if (!ok) return false;
       } else if (type === 'bool') {
         if (!values.includes(String(p[key]))) return false;
+      } else if (type === 'tags') {
+        // 選択タグのいずれかを値が含めばOK（部分一致）
+        const cand = valuesOf(p, key);
+        if (!cand.some(v => values.some(tag => String(v).includes(tag)))) return false;
       } else {
         const cand = valuesOf(p, key);
         if (!cand.some(v => values.includes(String(v)))) return false;

@@ -115,7 +115,9 @@ const CATEGORIES = {
         ['7000-15000', '7,000〜1.5万円'], ['15000-99999999', '1.5万円〜'] ] },
       { key: 'tatami',       label: '適用畳数',  type: 'range', ranges: [
         ['0-6', '〜6畳'], ['7-8', '〜8畳'], ['9-12', '〜12畳'], ['13-99', '14畳以上'] ] },
-      { key: 'light_color',  label: '光色',      type: 'list' },
+      { key: 'light_color',  label: '光色',      type: 'tags', tags: [
+        ['調光', '調光（明るさ調整）'], ['調色', '調色（色切替）'],
+        ['電球色', '電球色'], ['昼白色', '昼白色'], ['昼光色', '昼光色'] ] },
       { key: 'light_source', label: '光源',      type: 'list' },
       { key: 'features',     label: '機能',      type: 'bool', items: [
         { key: 'remote', label: 'リモコン付き' } ] },
