@@ -12,7 +12,7 @@ const ROOT = path.resolve(__dirname, '..');
 const OUT = path.join(ROOT, 'data', 'lighting.json');
 const API = 'https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260401';
 const ORIGIN = process.env.RAKUTEN_ORIGIN || 'https://sakko1.github.io';
-const PER_TYPE = 24, PAGES = 6, MINPRICE = 1500;
+const PER_TYPE = 48, PAGES = 12, MINPRICE = 1500;
 
 const cfg = { a: process.env.RAKUTEN_APP_ID, k: process.env.RAKUTEN_ACCESS_KEY, f: process.env.RAKUTEN_AFFILIATE_ID };
 
