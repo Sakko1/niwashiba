@@ -1513,6 +1513,13 @@ img { max-width: 100%; display: block; }
     font-size: 28px;
   }
 
+  /* カード下部を縦積みにして窮屈さを解消 */
+  .product-foot {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
   /* 詳細ページ：1カラム化 */
   .detail-top {
     grid-template-columns: 1fr;
@@ -1533,8 +1540,24 @@ img { max-width: 100%; display: block; }
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* スペック行を縦積みにして長い範囲値も読みやすく */
+  .spec-row {
+    flex-direction: column;
+    gap: 1px;
+    padding-bottom: 5px;
+  }
+
+  .spec-value {
+    align-self: flex-start;
+  }
+
   .compare-bar-inner {
     flex-direction: column;
     gap: 8px;
+  }
+
+  .compare-bar-actions {
+    width: 100%;
+    justify-content: space-between;
   }
 }
