@@ -47,6 +47,11 @@ const MODELS = [
   { id: 'sankyo-skyreed', maker: '三協アルミ', series: 'スカイリード', match: 'スカイリード', kw: 'スカイリード カーポート 三協アルミ', sp: { roof_material: 'ポリカーボネート', roof_shape: 'フラット', support_type: '', wind_resist_mps: 46, heat_shield: false, warranty_years: 2 }, colors: C_SANKYO, options: OPT, url: S },
   { id: 'sankyo-doubleface', maker: '三協アルミ', series: 'ダブルフェース', match: 'ダブルフェース', kw: 'ダブルフェース カーポート 三協アルミ', sp: { roof_material: 'アルミ形材', roof_shape: 'フラット', support_type: '両側支持', wind_resist_mps: 46, heat_shield: false, warranty_years: 2 }, colors: C_SANKYO, options: OPT, url: S },
   { id: 'shikoku-myport', maker: '四国化成', series: 'マイポート', match: 'マイポート', kw: 'マイポート カーポート 四国化成', sp: { roof_material: 'アルミ形材', roof_shape: 'フラット', support_type: '両側支持', wind_resist_mps: null, heat_shield: false, warranty_years: 2 }, colors: C_SHIKOKU, options: OPT, url: K },
+  // --- 追加シリーズ ---
+  { id: 'ykkap-plainroof', maker: 'YKK AP', series: 'プレーンルーフ', match: 'プレーンルーフ', kw: 'YKK プレーンルーフ カーポート', sp: { roof_material: 'アルミ形材', roof_shape: 'フラット', support_type: '片側支持', wind_resist_mps: 42, heat_shield: false, warranty_years: 2 }, colors: C_YKK, options: OPT, url: 'https://www.ykkap.co.jp/consumer/products/exterior/plainroof' },
+  { id: 'sankyo-camfyace', maker: '三協アルミ', series: 'カムフィエース', match: 'カムフィ', kw: '三協アルミ カムフィエース カーポート', sp: { roof_material: 'ポリカーボネート', roof_shape: 'フラット', support_type: '片側支持', wind_resist_mps: 38, heat_shield: false, warranty_years: 2 }, colors: C_SANKYO, options: OPT, url: 'https://alumi.st-grp.co.jp/products/garage/carport/camfyace/' },
+  { id: 'sankyo-mylish', maker: '三協アルミ', series: 'ニューマイリッシュ', match: 'マイリッシュ', kw: '三協アルミ ニューマイリッシュ カーポート', sp: { roof_material: 'ポリカーボネート', roof_shape: 'フラット', support_type: '片側支持', wind_resist_mps: 34, heat_shield: false, warranty_years: 2 }, colors: C_SANKYO, options: OPT, url: 'https://alumi.st-grp.co.jp/products/garage/carport/' },
+  { id: 'ykkap-gport-gr', maker: 'YKK AP', series: 'ジーポートPro GR', match: 'ジーポート', match2: 'GR', kw: 'YKK ジーポートPro GR カーポート', sp: { roof_material: 'スチール折板', roof_shape: 'フラット', support_type: '両側支持', wind_resist_mps: 62, heat_shield: false, warranty_years: 2 }, colors: C_YKK, options: OPT_LED, url: Y },
 ];
 
 async function fetchPage(kw, page, attempt = 0) {
@@ -72,7 +77,7 @@ async function buildModel(M) {
     if (d.errors) { console.warn(`  ${M.series}: ${d.errors.errorMessage}`); break; }
     for (const w of (d.Items || [])) {
       const i = w.Item || w; const n = i.itemName || '';
-      if (!n.includes(M.match) || NG.test(n) || !i.itemPrice || i.itemPrice < MINPRICE) continue;
+      if (!n.includes(M.match) || (M.match2 && !n.includes(M.match2)) || NG.test(n) || !i.itemPrice || i.itemPrice < MINPRICE) continue;
       const c = cnt(n); if (!c) continue;
       // サイズトークン（メーカーで形式が異なる）
       let token = '', wmm = null, dmm = null;
