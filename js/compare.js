@@ -57,17 +57,21 @@ function renderTable() {
 
   const table = document.getElementById('compareTable');
 
-  // ヘッダー行（商品名 + 削除ボタン）
+  // ヘッダー行（商品名 + 削除ボタン）。画像・商品名はアフィリエイトリンク
   let html = '<thead><tr><th class="compare-th-label">項目</th>';
   products.forEach(p => {
+    const aff = (p.affiliate_url && p.affiliate_url !== '') ? p.affiliate_url : '';
+    const linkOpen = aff ? `<a class="compare-prod-link" href="${aff}" target="_blank" rel="nofollow sponsored noopener" title="${affiliateLabel(p.affiliate_provider)}で見る">` : '<div class="compare-prod-link">';
+    const linkClose = aff ? '</a>' : '</div>';
     html += `
       <th class="compare-th-product">
         <div class="compare-prod-head">
-          <div class="compare-prod-thumb">
-            <img src="${imageSrc(p, '')}" alt="${p.name}"
-                 onerror="this.style.display='none';">
-          </div>
-          <div class="compare-prod-name">${p.name}</div>
+          ${linkOpen}
+            <div class="compare-prod-thumb">
+              <img src="${imageSrc(p, '')}" alt="${p.name}" onerror="this.style.display='none';">
+            </div>
+            <div class="compare-prod-name">${p.name}</div>
+          ${linkClose}
           <button type="button" class="compare-remove" data-id="${p.id}" title="削除">× 削除</button>
         </div>
       </th>`;
@@ -89,13 +93,15 @@ function renderTable() {
     html += '</tr>';
   });
 
-  // 公式リンク行
-  html += '<tr><th class="compare-row-label">詳細</th>';
+  // 購入リンク行（アフィリエイト）＋メーカー公式（あれば）
+  html += '<tr><th class="compare-row-label">購入・リンク</th>';
   products.forEach(p => {
-    const link = (p.url && p.url !== '')
-      ? `<a href="${p.url}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">公式サイト</a>`
-      : '<span class="is-unknown">不明</span>';
-    html += `<td class="compare-cell">${link}</td>`;
+    const aff = (p.affiliate_url && p.affiliate_url !== '')
+      ? `<a href="${p.affiliate_url}" target="_blank" rel="nofollow sponsored noopener" class="compare-buy">${affiliateLabel(p.affiliate_provider)} ↗</a>`
+      : '<span class="is-unknown">リンクなし</span>';
+    const official = (p.url && p.url !== '')
+      ? `<a href="${p.url}" target="_blank" rel="noopener" class="compare-official">メーカー公式 ↗</a>` : '';
+    html += `<td class="compare-cell"><div class="compare-buy-wrap">${aff}${official}</div></td>`;
   });
   html += '</tr>';
 
