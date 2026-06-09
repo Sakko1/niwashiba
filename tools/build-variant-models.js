@@ -52,6 +52,12 @@ const MODELS = [
   { id: 'sankyo-camfyace', maker: '三協アルミ', series: 'カムフィエース', match: 'カムフィ', kw: '三協アルミ カムフィエース カーポート', sp: { roof_material: 'ポリカーボネート', roof_shape: 'フラット', support_type: '片側支持', wind_resist_mps: 38, heat_shield: false, warranty_years: 2 }, colors: C_SANKYO, options: OPT, url: 'https://alumi.st-grp.co.jp/products/garage/carport/camfyace/' },
   { id: 'sankyo-mylish', maker: '三協アルミ', series: 'ニューマイリッシュ', match: 'マイリッシュ', kw: '三協アルミ ニューマイリッシュ カーポート', sp: { roof_material: 'ポリカーボネート', roof_shape: 'フラット', support_type: '片側支持', wind_resist_mps: 34, heat_shield: false, warranty_years: 2 }, colors: C_SANKYO, options: OPT, url: 'https://alumi.st-grp.co.jp/products/garage/carport/' },
   { id: 'ykkap-gport-gr', maker: 'YKK AP', series: 'ジーポートPro GR', match: 'ジーポート', match2: 'GR', kw: 'YKK ジーポートPro GR カーポート', sp: { roof_material: 'スチール折板', roof_shape: 'フラット', support_type: '両側支持', wind_resist_mps: 62, heat_shield: false, warranty_years: 2 }, colors: C_YKK, options: OPT_LED, url: Y },
+  // --- 追加シリーズ 第2弾 ---
+  { id: 'shikoku-myport-v', maker: '四国化成', series: 'マイポートV', match: 'マイポートV', kw: '四国化成 マイポートV カーポート', sp: { roof_material: 'アルミ形材', roof_shape: 'フラット', support_type: '両側支持', wind_resist_mps: null, heat_shield: false, warranty_years: 2 }, colors: C_SHIKOKU, options: OPT, url: K },
+  { id: 'shikoku-myport-origin', maker: '四国化成', series: 'マイポートOrigin', match: 'マイポートOrigin', kw: '四国化成 マイポートOrigin カーポート', sp: { roof_material: 'アルミ形材', roof_shape: 'フラット', support_type: '両側支持', wind_resist_mps: null, heat_shield: false, warranty_years: 2 }, colors: C_SHIKOKU, options: OPT, url: K },
+  { id: 'ykkap-arius-z', maker: 'YKK AP', series: 'アリュースZ', match: 'アリュースZ', kw: 'YKK アリュースZ カーポート 積雪', sp: { roof_material: 'ポリカーボネート', roof_shape: 'アール', support_type: '片側支持', wind_resist_mps: 42, heat_shield: false, warranty_years: 2 }, colors: C_YKK, options: OPT, url: Y },
+  { id: 'kiro-style', maker: 'キロスタイル', series: 'キロスタイルカーポート', match: 'キロスタイル', kw: 'キロスタイル カーポート', sp: { roof_material: 'ポリカーボネート', roof_shape: 'フラット', support_type: '片側支持', wind_resist_mps: null, heat_shield: false, warranty_years: 1 }, colors: ['ブラック', 'ブラウン', 'シルバー', 'ホワイト'], options: OPT, url: '' },
+  { id: 'lixil-soldyport', maker: 'LIXIL', series: 'ソルディーポート', match: 'ソルディー', kw: 'LIXIL ソルディーポート カーポート 折板', sp: { roof_material: 'スチール折板', roof_shape: 'フラット', support_type: '両側支持', wind_resist_mps: 46, heat_shield: false, warranty_years: 2 }, colors: C_LIXIL, options: OPT, url: L },
 ];
 
 async function fetchPage(kw, page, attempt = 0) {
