@@ -131,6 +131,60 @@ const CATEGORIES = {
       { value: 'tatami-desc',label: '広い部屋向け順', num: 'tatami', dir: -1 },
     ],
   },
+
+  /* ====================== カップボード（食器棚・キッチン収納） ====================== */
+  cupboard: {
+    id: 'cupboard',
+    label: 'カップボード',
+    emoji: '🍽️',
+    dataPath: 'cupboard.json',
+    storageKey: 'niwashiba_compare_cupboard',
+    listPage: 'cupboard.html',
+    detailPage: 'cupboard-detail.html',
+    lead: 'タイプ・幅・価格・カラーなどで絞り込み、気になる食器棚・キッチン収納を比較できます。',
+
+    fields: [
+      { key: 'price',     label: '価格（税込）', format: v => '¥' + Number(v).toLocaleString() },
+      { key: 'type',      label: 'タイプ' },
+      { key: 'width_cm',  label: '幅',     format: v => v + ' cm' },
+      { key: 'depth_cm',  label: '奥行',   format: v => v + ' cm' },
+      { key: 'height_cm', label: '高さ',   format: v => v + ' cm' },
+      { key: 'color',     label: 'カラー' },
+      { key: 'assembled', label: '組立',   format: v => (v ? '完成品' : '組立式') },
+      { key: 'outlet',    label: 'コンセント', format: v => (v ? 'あり' : 'なし') },
+    ],
+
+    cardSpecs:  ['price', 'type', 'width_cm', 'color'],
+    highlights: ['type', 'width_cm', 'height_cm', 'color'],
+
+    rangeKeys: ['price', 'width_cm', 'depth_cm', 'height_cm'],
+    sizeOrder: [],
+
+    bestValue: { minBetter: ['price'], maxBetter: [] },
+
+    filters: [
+      { key: 'type',     label: 'タイプ',  type: 'list' },
+      { key: 'price',    label: '価格帯',  type: 'range', ranges: [
+        ['0-10000', '〜1万円'], ['10000-30000', '1〜3万円'],
+        ['30000-50000', '3〜5万円'], ['50000-99999999', '5万円〜'] ] },
+      { key: 'width_cm', label: '幅',      type: 'range', ranges: [
+        ['0-59', '〜60cm未満（スリム）'], ['60-89', '60〜90cm'],
+        ['90-119', '90〜120cm'], ['120-999', '120cm以上'] ] },
+      { key: 'color',    label: 'カラー',  type: 'tags', tags: [
+        ['ホワイト', 'ホワイト'], ['ブラック', 'ブラック'], ['ナチュラル', 'ナチュラル'],
+        ['ブラウン', 'ブラウン'], ['グレー', 'グレー'] ] },
+      { key: 'features', label: '機能',    type: 'bool', items: [
+        { key: 'assembled', label: '完成品' }, { key: 'outlet', label: 'コンセント付き' } ] },
+    ],
+
+    sorts: [
+      { value: 'default',    label: 'おすすめ順' },
+      { value: 'price-asc',  label: '価格が安い順', num: 'price', dir: 1 },
+      { value: 'price-desc', label: '価格が高い順', num: 'price', dir: -1 },
+      { value: 'width-asc',  label: '幅が狭い順',   num: 'width_cm', dir: 1 },
+      { value: 'width-desc', label: '幅が広い順',   num: 'width_cm', dir: -1 },
+    ],
+  },
 };
 
 // 現在のカテゴリー設定
