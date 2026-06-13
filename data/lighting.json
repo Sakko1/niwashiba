@@ -1,7 +1,7 @@
 {
   "category": "lighting",
   "category_label": "照明",
-  "updated": "2026-06-12",
+  "updated": "2026-06-13",
   "products": [
     {
       "id": "light-1dot57x",
@@ -6353,7 +6353,7 @@
       "remote": false,
       "mount": "直付け",
       "diameter_mm": null,
-      "price": 2980,
+      "price": 2960,
       "rakuten_item_code": "meikou-corp:10000056",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/meikou-corp/cabinet/13328309/downloaded-image-1.jpg?_ex=400x400",
       "image": "",
