@@ -1,7 +1,7 @@
 {
   "category": "lighting",
   "category_label": "照明",
-  "updated": "2026-06-19",
+  "updated": "2026-06-20",
   "products": [
     {
       "id": "light-1dot57x",
@@ -4865,7 +4865,7 @@
       "remote": false,
       "mount": "埋込",
       "diameter_mm": null,
-      "price": 28800,
+      "price": 29800,
       "rakuten_item_code": "denraiasia:10000207",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/denraiasia/cabinet/product/wp009/wp009-01.jpg?_ex=400x400",
       "image": "",
