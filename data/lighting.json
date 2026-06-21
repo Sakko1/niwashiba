@@ -1,7 +1,7 @@
 {
   "category": "lighting",
   "category_label": "照明",
-  "updated": "2026-06-20",
+  "updated": "2026-06-21",
   "products": [
     {
       "id": "light-1dot57x",
@@ -233,7 +233,7 @@
       "remote": true,
       "mount": "埋込",
       "diameter_mm": null,
-      "price": 2480,
+      "price": 2230,
       "rakuten_item_code": "lifecorner:10002174",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/lifecorner/cabinet/sh/sn/n25w/c-699b.jpg?_ex=400x400",
       "image": "",
