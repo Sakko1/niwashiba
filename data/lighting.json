@@ -1,7 +1,7 @@
 {
   "category": "lighting",
   "category_label": "照明",
-  "updated": "2026-06-26",
+  "updated": "2026-06-27",
   "products": [
     {
       "id": "light-1dot57x",
@@ -7097,7 +7097,7 @@
       "remote": true,
       "mount": "ダクトレール",
       "diameter_mm": null,
-      "price": 2680,
+      "price": 2980,
       "rakuten_item_code": "lifecorner:10002176",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/lifecorner/cabinet/sh/sn/f-xd-25w-1b.jpg?_ex=400x400",
       "image": "",
