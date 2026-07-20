@@ -1,7 +1,7 @@
 {
   "category": "cupboard",
   "category_label": "カップボード",
-  "updated": "2026-07-19",
+  "updated": "2026-07-20",
   "products": [
     {
       "id": "cb-40ujgh",
@@ -1056,7 +1056,7 @@
       "outlet": false,
       "price": 22990,
       "rakuten_item_code": "low-ya:10008224",
-      "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/low-ya/cabinet/event/event_260719/cart/vg-soleil.jpg?_ex=400x400",
+      "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/low-ya/cabinet/item_cart/kitchen/01/vg-soleil_01.jpg?_ex=400x400",
       "image": "",
       "affiliate_url": "https://hb.afl.rakuten.co.jp/hgc/g00pxdhn.hztho1c7.g00pxdhn.hzthp40a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flow-ya%2Fvg-soleil%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Flow-ya%2Fi%2F10008224%2F&rafcid=wsc_i_is_1b6e621a-5961-43b3-b09c-c16d8e7c8097",
       "affiliate_provider": "楽天市場",
@@ -4094,7 +4094,7 @@
       "color": "ホワイト・ブラック・グレー",
       "assembled": null,
       "outlet": false,
-      "price": 2720,
+      "price": 3480,
       "rakuten_item_code": "sasuke-shop:10000130",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/sasuke-shop/cabinet/rangerack/rennjiraku/ren3.jpg?_ex=400x400",
       "image": "",
