@@ -1,7 +1,7 @@
 {
   "category": "cupboard",
   "category_label": "カップボード",
-  "updated": "2026-07-20",
+  "updated": "2026-07-21",
   "products": [
     {
       "id": "cb-40ujgh",
@@ -1714,7 +1714,7 @@
       "color": "ホワイト・ブラック・ナチュラル・ブラウン",
       "assembled": true,
       "outlet": false,
-      "price": 49800,
+      "price": 59800,
       "rakuten_item_code": "furniture-village:10001535",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/furniture-village/cabinet/07048024/07769468/kg_900_1_1.jpg?_ex=400x400",
       "image": "",
@@ -1854,7 +1854,7 @@
       "color": "ブラック・ナチュラル・ブラウン",
       "assembled": true,
       "outlet": false,
-      "price": 76800,
+      "price": 89800,
       "rakuten_item_code": "furniture-village:10007191",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/furniture-village/cabinet/07048024/07195960/mto_390_1_new.jpg?_ex=400x400",
       "image": "",
@@ -3734,7 +3734,7 @@
       "color": "ブラック・ナチュラル・グレー",
       "assembled": true,
       "outlet": true,
-      "price": 39800,
+      "price": 51800,
       "rakuten_item_code": "furniture-village:10007445",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/furniture-village/cabinet/07048024/07808449/et_100_newtop6.jpg?_ex=400x400",
       "image": "",
