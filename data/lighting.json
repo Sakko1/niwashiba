@@ -1,7 +1,7 @@
 {
   "category": "lighting",
   "category_label": "照明",
-  "updated": "2026-07-22",
+  "updated": "2026-07-23",
   "products": [
     {
       "id": "light-1dot57x",
@@ -3185,7 +3185,7 @@
       "remote": false,
       "mount": "引掛シーリング",
       "diameter_mm": null,
-      "price": 1980,
+      "price": 1970,
       "rakuten_item_code": "rack-kan:10009991",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/rack-kan/cabinet/jishahin26/imgrc0074874948.jpg?_ex=400x400",
       "image": "",
