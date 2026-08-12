@@ -1,7 +1,7 @@
 {
   "category": "lighting",
   "category_label": "照明",
-  "updated": "2026-08-11",
+  "updated": "2026-08-12",
   "products": [
     {
       "id": "light-1dot57x",
@@ -11537,7 +11537,7 @@
       "remote": false,
       "mount": "",
       "diameter_mm": null,
-      "price": 2750,
+      "price": 2870,
       "rakuten_item_code": "ilemon:10000438",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/ilemon/cabinet/top/mjd1488.jpg?_ex=400x400",
       "image": "",
