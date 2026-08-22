@@ -1,7 +1,7 @@
 {
   "category": "cupboard",
   "category_label": "カップボード",
-  "updated": "2026-08-21",
+  "updated": "2026-08-22",
   "products": [
     {
       "id": "cb-40ujgh",
@@ -6794,7 +6794,7 @@
       "color": "ホワイト・ナチュラル・ブラウン",
       "assembled": true,
       "outlet": false,
-      "price": 58300,
+      "price": 60500,
       "rakuten_item_code": "one-and-only:10000437",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/one-and-only/cabinet/noda-1a/60skt77yu.jpg?_ex=400x400",
       "image": "",
@@ -7154,7 +7154,7 @@
       "color": "ホワイト",
       "assembled": false,
       "outlet": true,
-      "price": 10999,
+      "price": 11999,
       "rakuten_item_code": "e-kurashi:10017750",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/e-kurashi/cabinet/main-img/006/main-x0a78.jpg?_ex=400x400",
       "image": "",
@@ -7794,7 +7794,7 @@
       "color": "ホワイト",
       "assembled": true,
       "outlet": true,
-      "price": 10999,
+      "price": 11999,
       "rakuten_item_code": "kagustyle:10018230",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/kagustyle/cabinet/main-img/006/main-x0a78.jpg?_ex=400x400",
       "image": "",
