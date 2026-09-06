@@ -1,7 +1,7 @@
 {
   "category": "lighting",
   "category_label": "照明",
-  "updated": "2026-09-05",
+  "updated": "2026-09-06",
   "products": [
     {
       "id": "light-1dot57x",
@@ -11921,7 +11921,7 @@
       "remote": false,
       "mount": "クリップ式",
       "diameter_mm": null,
-      "price": 2412,
+      "price": 2278,
       "rakuten_item_code": "ilemon:10000316",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/ilemon/cabinet/top/mjd1109.jpg?_ex=400x400",
       "image": "",
