@@ -1,7 +1,7 @@
 {
   "category": "lighting",
   "category_label": "照明",
-  "updated": "2026-09-15",
+  "updated": "2026-09-17",
   "products": [
     {
       "id": "light-1dot57x",
@@ -9185,7 +9185,7 @@
       "remote": true,
       "mount": "引掛シーリング",
       "diameter_mm": null,
-      "price": 2380,
+      "price": 2480,
       "rakuten_item_code": "bg-shop:10000017",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/bg-shop/cabinet/09190904/09190905/imgrc0092817525.jpg?_ex=400x400",
       "image": "",
@@ -13769,7 +13769,7 @@
       "remote": false,
       "mount": "",
       "diameter_mm": null,
-      "price": 2180,
+      "price": 1980,
       "rakuten_item_code": "hoshishouji:10005785",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/hoshishouji/cabinet/06237531/200080nst1.jpg?_ex=400x400",
       "image": "",
