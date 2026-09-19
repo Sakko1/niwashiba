@@ -1,7 +1,7 @@
 {
   "category": "lighting",
   "category_label": "照明",
-  "updated": "2026-09-18",
+  "updated": "2026-09-19",
   "products": [
     {
       "id": "light-1dot57x",
@@ -1049,7 +1049,7 @@
       "remote": true,
       "mount": "引掛シーリング",
       "diameter_mm": 120,
-      "price": 16500,
+      "price": 14900,
       "rakuten_item_code": "dmastore:10001436",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/dmastore/cabinet/item08/estreominicl2_1c.jpg?_ex=400x400",
       "image": "",
@@ -1555,7 +1555,7 @@
       "diameter_mm": null,
       "price": 2000,
       "rakuten_item_code": "takemura-syokai:10000074",
-      "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/takemura-syokai/cabinet/gimg/gimg2/take44-1-1.jpg?_ex=400x400",
+      "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/takemura-syokai/cabinet/gimg/gimg2/take44-new2.jpg?_ex=400x400",
       "image": "",
       "affiliate_url": "https://hb.afl.rakuten.co.jp/hgc/g00tinfn.hzthoa20.g00tinfn.hzthp27f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftakemura-syokai%2Ftake13%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftakemura-syokai%2Fi%2F10000074%2F&rafcid=wsc_i_is_1b6e621a-5961-43b3-b09c-c16d8e7c8097",
       "affiliate_provider": "楽天市場",
@@ -11825,7 +11825,7 @@
       "remote": false,
       "mount": "コンセント式",
       "diameter_mm": null,
-      "price": 28800,
+      "price": 29800,
       "rakuten_item_code": "receno:10017503",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/receno/cabinet/fllighting/sieni-tl/img/0000050024020.jpg?_ex=400x400",
       "image": "",
