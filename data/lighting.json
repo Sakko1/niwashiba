@@ -1,7 +1,7 @@
 {
   "category": "lighting",
   "category_label": "照明",
-  "updated": "2026-09-20",
+  "updated": "2026-09-22",
   "products": [
     {
       "id": "light-1dot57x",
@@ -13049,7 +13049,7 @@
       "remote": false,
       "mount": "直付け",
       "diameter_mm": null,
-      "price": 2910,
+      "price": 3110,
       "rakuten_item_code": "ledshark:10000083",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/ledshark/cabinet/10059313/10059314/50wyt804.jpg?_ex=400x400",
       "image": "",
@@ -13169,7 +13169,7 @@
       "remote": false,
       "mount": "ダクトレール",
       "diameter_mm": null,
-      "price": 2910,
+      "price": 3110,
       "rakuten_item_code": "bg-shop:10003214",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/bg-shop/cabinet/09650782/120cmled50w01.jpg?_ex=400x400",
       "image": "",
