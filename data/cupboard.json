@@ -1,7 +1,7 @@
 {
   "category": "cupboard",
   "category_label": "カップボード",
-  "updated": "2026-09-29",
+  "updated": "2026-09-30",
   "products": [
     {
       "id": "cb-40ujgh",
@@ -4734,7 +4734,7 @@
       "color": "ホワイト・ブラック",
       "assembled": null,
       "outlet": false,
-      "price": 3980,
+      "price": 4280,
       "rakuten_item_code": "aakshop:10000675",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/aakshop/cabinet/biiino/item/main-image-2/20240226161940_1.jpg?_ex=400x400",
       "image": "",
@@ -4954,7 +4954,7 @@
       "color": "",
       "assembled": null,
       "outlet": false,
-      "price": 4690,
+      "price": 4290,
       "rakuten_item_code": "dujosoo:10000051",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/dujosoo/cabinet/10624550/imgrc0108895985.jpg?_ex=400x400",
       "image": "",
@@ -7454,7 +7454,7 @@
       "color": "ナチュラル",
       "assembled": true,
       "outlet": false,
-      "price": 122990,
+      "price": 112990,
       "rakuten_item_code": "low-ya:10011800",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/low-ya/cabinet/item_cart/kitchen/02/s-s300051_01.jpg?_ex=400x400",
       "image": "",
