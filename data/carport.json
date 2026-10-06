@@ -1,7 +1,7 @@
 {
   "category": "carport",
   "category_label": "カーポート",
-  "updated": "2026-10-05",
+  "updated": "2026-10-06",
   "products": [
     {
       "id": "lixil-carport-sc",
@@ -3348,7 +3348,7 @@
           "clearance_mm": null,
           "snow_resist_cm": null,
           "rakuten_item_code": "ex-shop-diy:10001956",
-          "price": 253300,
+          "price": 285400,
           "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/ex-shop-diy/cabinet/cpsa/sacp110042_360.jpg?_ex=400x400",
           "affiliate_url": "https://hb.afl.rakuten.co.jp/hgc/g00sccgn.hztho2c7.g00sccgn.hzthp642/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fex-shop-diy%2Fsacp110042%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fex-shop-diy%2Fi%2F10001956%2F&rafcid=wsc_i_is_1b6e621a-5961-43b3-b09c-c16d8e7c8097"
         },
@@ -3468,7 +3468,7 @@
           "clearance_mm": null,
           "snow_resist_cm": null,
           "rakuten_item_code": "ex-shop-diy:10001954",
-          "price": 509000,
+          "price": 573300,
           "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/ex-shop-diy/cabinet/cpsa/sacp270042_360.jpg?_ex=400x400",
           "affiliate_url": "https://hb.afl.rakuten.co.jp/hgc/g00sccgn.hztho2c7.g00sccgn.hzthp642/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fex-shop-diy%2Fsacp270042%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fex-shop-diy%2Fi%2F10001954%2F&rafcid=wsc_i_is_1b6e621a-5961-43b3-b09c-c16d8e7c8097"
         }
