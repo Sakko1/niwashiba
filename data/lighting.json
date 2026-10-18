@@ -1,7 +1,7 @@
 {
   "category": "lighting",
   "category_label": "照明",
-  "updated": "2026-10-17",
+  "updated": "2026-10-18",
   "products": [
     {
       "id": "light-1dot57x",
@@ -1505,7 +1505,7 @@
       "remote": false,
       "mount": "引掛シーリング",
       "diameter_mm": null,
-      "price": 1790,
+      "price": 1890,
       "rakuten_item_code": "11shop:10000848",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/11shop/cabinet/1040/101052-01.jpg?_ex=400x400",
       "image": "",
