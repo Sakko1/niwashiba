@@ -1,7 +1,7 @@
 {
   "category": "cupboard",
   "category_label": "カップボード",
-  "updated": "2026-10-25",
+  "updated": "2026-10-27",
   "products": [
     {
       "id": "cb-40ujgh",
@@ -2914,7 +2914,7 @@
       "color": "ホワイト・ブラック・ナチュラル・ブラウン",
       "assembled": true,
       "outlet": true,
-      "price": 44800,
+      "price": 43800,
       "rakuten_item_code": "rush-interior:10000003",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/rush-interior/cabinet/07144018/07197251/sj_1120/sj_1120_new_wh_2.jpg?_ex=400x400",
       "image": "",
@@ -7834,7 +7834,7 @@
       "color": "ホワイト・ブラック",
       "assembled": true,
       "outlet": true,
-      "price": 23500,
+      "price": 21800,
       "rakuten_item_code": "rush-interior:10000043",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/rush-interior/cabinet/07144018/07197251/sj_6100_1.jpg?_ex=400x400",
       "image": "",
