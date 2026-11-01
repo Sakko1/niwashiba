@@ -1,7 +1,7 @@
 {
   "category": "lighting",
   "category_label": "照明",
-  "updated": "2026-10-31",
+  "updated": "2026-11-01",
   "products": [
     {
       "id": "light-1dot57x",
@@ -12833,7 +12833,7 @@
       "remote": false,
       "mount": "直付け",
       "diameter_mm": null,
-      "price": 3110,
+      "price": 2910,
       "rakuten_item_code": "shark-house:10004253",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/shark-house/cabinet/10050129/lc50w10000lm120cmg02.jpg?_ex=400x400",
       "image": "",
