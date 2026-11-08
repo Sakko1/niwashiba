@@ -1,7 +1,7 @@
 {
   "category": "lighting",
   "category_label": "照明",
-  "updated": "2026-11-07",
+  "updated": "2026-11-08",
   "products": [
     {
       "id": "light-1dot57x",
@@ -4025,7 +4025,7 @@
       "remote": true,
       "mount": "",
       "diameter_mm": null,
-      "price": 5980,
+      "price": 6980,
       "rakuten_item_code": "e-akari:10052405",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/e-akari/cabinet/11071399/imgrc0101740745.jpg?_ex=400x400",
       "image": "",
