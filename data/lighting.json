@@ -1,7 +1,7 @@
 {
   "category": "lighting",
   "category_label": "照明",
-  "updated": "2026-11-08",
+  "updated": "2026-11-09",
   "products": [
     {
       "id": "light-1dot57x",
@@ -1865,7 +1865,7 @@
       "remote": true,
       "mount": "引掛シーリング",
       "diameter_mm": 430,
-      "price": 19800,
+      "price": 22000,
       "rakuten_item_code": "mu-ra:10000676",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/mu-ra/cabinet/01852733/net-limited/03064079/ons-025-2018.jpg?_ex=400x400",
       "image": "",
@@ -11633,7 +11633,7 @@
       "remote": false,
       "mount": "",
       "diameter_mm": null,
-      "price": 2380,
+      "price": 2480,
       "rakuten_item_code": "reborn-online:10000083",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/reborn-online/cabinet/b/10840216/led_1.jpg?_ex=400x400",
       "image": "",
