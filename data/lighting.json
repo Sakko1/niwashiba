@@ -1,7 +1,7 @@
 {
   "category": "lighting",
   "category_label": "照明",
-  "updated": "2026-11-22",
+  "updated": "2026-11-23",
   "products": [
     {
       "id": "light-1dot57x",
@@ -3689,7 +3689,7 @@
       "remote": true,
       "mount": "",
       "diameter_mm": null,
-      "price": 5480,
+      "price": 7860,
       "rakuten_item_code": "e-akari:10051273",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/e-akari/cabinet/jishahin43/imgrc0094564715.jpg?_ex=400x400",
       "image": "",
