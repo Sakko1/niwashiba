@@ -1,7 +1,7 @@
 {
   "category": "lighting",
   "category_label": "照明",
-  "updated": "2026-11-23",
+  "updated": "2026-11-24",
   "products": [
     {
       "id": "light-1dot57x",
@@ -1457,7 +1457,7 @@
       "remote": false,
       "mount": "コンセント式",
       "diameter_mm": null,
-      "price": 3630,
+      "price": 1815,
       "rakuten_item_code": "illumica:10000074",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/illumica/cabinet/11209333/3528_1mset_page1.jpg?_ex=400x400",
       "image": "",
@@ -3689,7 +3689,7 @@
       "remote": true,
       "mount": "",
       "diameter_mm": null,
-      "price": 7860,
+      "price": 5480,
       "rakuten_item_code": "e-akari:10051273",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/e-akari/cabinet/jishahin43/imgrc0094564715.jpg?_ex=400x400",
       "image": "",
@@ -8465,7 +8465,7 @@
       "remote": true,
       "mount": "クリップ式",
       "diameter_mm": null,
-      "price": 1690,
+      "price": 1790,
       "rakuten_item_code": "kyodoled:10001392",
       "image_real": "https://thumbnail.image.rakuten.co.jp/@0_mall/kyodoled/cabinet/04497778/imgrc0123852124.jpg?_ex=400x400",
       "image": "",
